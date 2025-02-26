@@ -1,4 +1,5 @@
 @extends("Layout.layout")
+
 @section("Content")
 
 <!-- Hero Section -->
@@ -14,9 +15,12 @@
                 <p class="lead text-muted animate__animated animate__fadeInUp animate__delay-1s">
                     Are you looking for a one stop solution for all your business needs ? Then Links station is your destination. We provide a wide verity of services which include digital marketing, website development, software development, search engine optimization, travel documentation and printing and packaging solutions to suit the needs of every business whether big or small.
                 </p>
-                <a href="#" style="border-radius: 50px;" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp animate__delay-2s">
-                    Get Started <i class="fas fa-arrow-right ms-2"></i>
-                </a>
+
+                      <!-- Contact Now Button -->
+            <a  href="https://wa.me/922132640403?text=Chat%20on%20WhatsApp%20with%20%2B92%2021%2032640403"
+            class="btn btn-success fw-bold rounded-pill px-4 py-2 " target="_blank">
+             <i style="color: green;" class="bi bi-whatsapp"></i> Contact Us For a Free Consultation
+         </a>
             </div>
 
             <!-- Right Side: Video -->
@@ -101,7 +105,7 @@
 </div>
 
 <!-- Our Technologies Section -->
-<div style="background: linear-gradient(135deg,#fff,#00aeee); " class="container tech-section" >
+<div  class="container tech-section" >
 
     <h1 class="display-4 fw-bold text-dark animate__animated animate__fadeInUp">
       Popular Services
@@ -118,12 +122,14 @@
     <div class="tech-icons mt-3">
         <h3>Our Technologies</h3>
         <div class="icons">
-            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968267.png" alt="HTML">
-            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968242.png" alt="CSS">
-            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" alt="JS">
-            <img src="https://cdn-icons-png.flaticon.com/128/1126/1126012.png" alt="React">
-            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968672.png" alt="Bootstrap">
-            <img src="https://cdn-icons-png.flaticon.com/128/174/174881.png" alt="WordPress">
+            <img src="{{ asset("assets/img/one.svg") }}" alt="HTML">
+            <img src="{{ asset("assets/img/two.svg") }}" alt="CSS">
+            <img src="{{ asset("assets/img/three.svg") }}" alt="JS">
+            <img src="{{ asset("assets/img/four.svg") }}" alt="React">
+            <img src="{{ asset("assets/img/five.svg") }}" alt="Bootstrap">
+            <img src="{{ asset("assets/img/six.svg") }}" alt="WordPress">
+            <img src="{{ asset("assets/img/seven.svg") }}" alt="WordPress">
+
         </div>
     </div>
 
@@ -131,18 +137,16 @@
 </div>
 
 {{-- services --}}
-<div  class="container-fluid my-5 service-container">
+<div class="container-fluid my-5 service-container mt-0">
     <div class="container">
-        <h1 class="display-4 fw-bold text-dark animate__animated animate__fadeInUp text-center">
-            Our Services
-          </h1>
-        <div class="row g-4 mt-2">
+        <h1 class="text-center text-white mb-4">Our Services</h1>
+        <div class="row g-4">
             <!-- Web Development -->
             <div class="col-md-4">
                 <div class="service-card">
                     <h5>Web Development</h5>
                     <img src="{{ asset('assets/img/code.jpeg') }}" alt="Web Development">
-                    <a href="#" class="btn btn-custom">Read more</a>
+                    <a href="{{ asset('/webdevelopment') }}" class="btn btn-custom">Read more</a>
                 </div>
             </div>
 
@@ -151,7 +155,7 @@
                 <div class="service-card">
                     <h5>Packaging Designing</h5>
                     <img src="{{ asset('assets/img/package.jpeg') }}" alt="Packaging Designing">
-                    <a href="#" class="btn btn-custom">Read more</a>
+                    <a href="{{ asset("/packaging") }}" class="btn btn-custom">Read more</a>
                 </div>
             </div>
 
@@ -160,7 +164,7 @@
                 <div class="service-card">
                     <h5>App Development</h5>
                     <img src="{{ asset('assets/img/mobile_app.jpeg') }}" alt="App Development">
-                    <a href="#" class="btn btn-custom">Read more</a>
+                    <a href="{{ asset("/appdevelopment") }}" class="btn btn-custom">Read more</a>
                 </div>
             </div>
 
@@ -169,7 +173,7 @@
                 <div class="service-card">
                     <h5>Digital Marketing</h5>
                     <img src="{{ asset('assets/img/digital.jpeg') }}" alt="Digital Marketing">
-                    <a href="#" class="btn btn-custom">Read more</a>
+                    <a href="{{ asset('/digital') }}" class="btn btn-custom">Read more</a>
                 </div>
             </div>
 
@@ -178,7 +182,7 @@
                 <div class="service-card">
                     <h5>SEO Optimization</h5>
                     <img src="{{ asset('assets/img/seo.jpeg') }}" alt="SEO">
-                    <a href="#" class="btn btn-custom">Read more</a>
+                    <a href="{{ asset('/seo') }}" class="btn btn-custom">Read more</a>
                 </div>
             </div>
 
@@ -187,7 +191,7 @@
                 <div class="service-card">
                     <h5>Travel Documentation</h5>
                     <img src="{{ asset('assets/img/travel.jpeg') }}" alt="Travel Documentation">
-                    <a href="#" class="btn btn-custom">Read more</a>
+                    <a href="{{ asset('/traveldoc') }}" class="btn btn-custom">Read more</a>
                 </div>
             </div>
 
@@ -196,7 +200,7 @@
                 <div class="service-card">
                     <h5>Customer Liaison</h5>
                     <img src="{{ asset('assets/img/customer.jpeg') }}" alt="Customer Liaison">
-                    <a href="#" class="btn btn-custom">Read more</a>
+                    <a href="{{ asset('/customer') }}" class="btn btn-custom">Read more</a>
                 </div>
             </div>
 
@@ -204,69 +208,72 @@
     </div>
 </div>
 
-
 {{-- services --}}
-<div  class="container-fluid my-5 py-5 service-section">
-    <div class="row g-4 justify-content-center">
-        <!-- Service Cards -->
-        <div class="col-lg-3 col-md-6">
-            <div class="card_three">
-                <img src="{{ asset('assets/img/web.webp') }}" class="card-img-top" alt="Web Development">
-                <div class="card-body">
-                    <h1 class="card-title">Web Development</h1>
-                    <p class="card-text">
-                        From B2B to B2C websites to much more. We make your website stand out from your competitors. Our website design services can help you boost more revenue, greater brand engagement and higher conversions with measurable results.
 
-                    </p>
+<!-- Services Section -->
+<div class="container my-5 py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">Our Services</h2>
+        <p class="text-muted">We offer a wide range of digital services to help your business grow.</p>
+    </div>
 
+    <div class="row g-4">
+        <!-- Service Card 1 -->
+        <div class="col-lg-6 col-md-6">
+            <div class="service-card-two">
+                <img src="assets/img/web.webp" alt="Web Development">
+                <div class="service-content">
+                    <h3>Web Development</h3>
+                    <p>From B2B to B2C websites, we make your brand stand out and deliver measurable results.</p>
+                    <a href="{{ asset("/webdevelopment") }}" class="read-more">Read More →</a>
                 </div>
             </div>
         </div>
 
-        <div class="col-lg-3 col-md-6">
-            <div class="card_three">
-                <img src="{{ asset('assets/img/digital.jpeg') }}" class="card-img-top" alt="Digital Marketing">
-                <div class="card-body">
-                    <h1 class="card-title">Digital Marketing</h1>
-                    <p class="card-text mb-5">
-                        One of our key benefits is that we provide a cost-effective way to reach a huge audience while simultaneously targeting a specific group within the audience.
-                    </p>
+        <!-- Service Card 2 -->
+        <div class="col-lg-6 col-md-6">
+            <div class="service-card-two" >
+                <img src="assets/img/digital.jpeg" alt="Digital Marketing">
+                <div class="service-content">
+                    <h3>Digital Marketing</h3>
+                    <p>Expand your reach with our cost-effective marketing strategies targeting the right audience.</p>
+                    <a href="{{ asset("/digital") }}" class="read-more">Read More →</a>
                 </div>
             </div>
         </div>
 
-        <div class="col-lg-3 col-md-6">
-            <div class="card_three">
-                <img src="{{ asset('assets/img/seo.jpeg') }}" class="card-img-top" alt="SEO">
-                <div class="card-body">
-                    <h1 class="card-title mt-3">SEO</h1>
-                    <p class="card-text mb-5">
-                        When your site is optimized for search engines, it gets more traffic which equates to increased brand awareness, as well as helps to bring more website traffic, more customers, and a better reputation for your brand.
-                    </p>
+        <!-- Service Card 3 -->
+        <div class="col-lg-6 col-md-6" >
+            <div class="service-card-two" style="height: 285px;">
+                <img src="assets/img/seo.jpeg" alt="SEO">
+                <div class="service-content">
+                    <h3>SEO</h3>
+                    <p>Optimize your website for better traffic, brand awareness, and customer engagement.</p>
+                    <a href="/seo" class="read-more">Read More →</a>
                 </div>
             </div>
         </div>
 
-        <!-- Study Section -->
-        <div class="col-lg-3 col-md-6">
-            <div class="card_three">
-                <img src="{{ asset('assets/img/study.jpg') }}" class="card-img-top" alt="Study">
-                <div class="card-body">
-                    <span class="text-muted">Study at Your Own Pace</span>
-                    <h4 class="mt-2">Boost Your Business with Us</h4>
-                    <ul class="text-start">
-                        <li>All Services</li>
+        <!-- Service Card 4 -->
+        <div class="col-lg-6 col-md-6">
+            <div class="service-card-two">
+                <img src="assets/img/study.jpg" alt="Study">
+                <div class="service-content">
+                    <h3>Boost Your Business</h3>
+                    <ul>
                         <li>Web Development</li>
                         <li>Digital Marketing</li>
                         <li>App Development</li>
                         <li>Customer Liaison</li>
                         <li>Travel Documentation</li>
                     </ul>
+                    <a href="/service" class="read-more">Read More →</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 {{-- services_two --}}
 
@@ -354,7 +361,7 @@
 
 
 {{-- testimonial --}}
-<div class="container my-5">
+{{-- <div class="container my-5">
     <h2 class="text-center fw-bold">OUR TESTIMONIAL</h2>
     <p class="text-center">What Clients Say About Us?</p>
 
@@ -393,7 +400,7 @@
         <div class="col-md-4 d-flex align-items-stretch mt-4">
             <div class="testimonial-card p-4 text-center border rounded">
                 <p class="quote">“ E Boot provides a wide variety of IT solutions. Links station worked with us closely and helped us connect with customers through our website. ”</p>
-                <img src="{{ asset('assets/img/eboot.jpeg') }}" class="rounded-circle my-2" width="60" alt="Client">
+                <img src="{{ asset('assets/img/wondering.jpeg')}}" class="rounded-circle my-2" width="60" alt="Client">
                 <h5 class="fw-bold">E Boot</h5>
                 <p>Manager, CorpX</p>
             </div>
@@ -403,7 +410,16 @@
         <div class="col-md-4 d-flex align-items-stretch mt-4">
             <div class="testimonial-card p-4 text-center border rounded">
                 <p class="quote">“ E Boot provides a wide variety of IT solutions. Links station worked with us closely and helped us connect with customers through our website. ”</p>
-                <img src="{{ asset('assets/img/eboot.jpeg') }}" class="rounded-circle my-2" width="60" alt="Client">
+                <img src="{{ asset('assets/img/friends_elec.webp') }}" class="rounded-circle my-2" width="60" alt="Client">
+                <h5 class="fw-bold">Wondering Peaks</h5>
+                <p>Manager, CorpX</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 d-flex align-items-stretch mt-4">
+            <div class="testimonial-card p-4 text-center border rounded">
+                <p class="quote">“ E Boot provides a wide variety of IT solutions. Links station worked with us closely and helped us connect with customers through our website. ”</p>
+                <img src="{{ asset('assets/img/digital_exp.jpeg') }}" class="rounded-circle my-2" width="60" alt="Client">
                 <h5 class="fw-bold">E Boot</h5>
                 <p>Manager, CorpX</p>
             </div>
@@ -412,7 +428,7 @@
         <div class="col-md-4 d-flex align-items-stretch mt-4">
             <div class="testimonial-card p-4 text-center border rounded">
                 <p class="quote">“ E Boot provides a wide variety of IT solutions. Links station worked with us closely and helped us connect with customers through our website. ”</p>
-                <img src="{{ asset('assets/img/eboot.jpeg') }}" class="rounded-circle my-2" width="60" alt="Client">
+                <img src="{{ asset('assets/img/mana.jpeg') }}" class="rounded-circle my-2" width="60" alt="Client">
                 <h5 class="fw-bold">E Boot</h5>
                 <p>Manager, CorpX</p>
             </div>
@@ -421,16 +437,7 @@
         <div class="col-md-4 d-flex align-items-stretch mt-4">
             <div class="testimonial-card p-4 text-center border rounded">
                 <p class="quote">“ E Boot provides a wide variety of IT solutions. Links station worked with us closely and helped us connect with customers through our website. ”</p>
-                <img src="{{ asset('assets/img/eboot.jpeg') }}" class="rounded-circle my-2" width="60" alt="Client">
-                <h5 class="fw-bold">E Boot</h5>
-                <p>Manager, CorpX</p>
-            </div>
-        </div>
-
-        <div class="col-md-4 d-flex align-items-stretch mt-4">
-            <div class="testimonial-card p-4 text-center border rounded">
-                <p class="quote">“ E Boot provides a wide variety of IT solutions. Links station worked with us closely and helped us connect with customers through our website. ”</p>
-                <img src="{{ asset('assets/img/eboot.jpeg') }}" class="rounded-circle my-2" width="60" alt="Client">
+                <img src="{{ asset('assets/img/folk.webp') }}" class="rounded-circle my-2" width="60" alt="Client">
                 <h5 class="fw-bold">E Boot</h5>
                 <p>Manager, CorpX</p>
             </div>
@@ -438,7 +445,7 @@
         <div class="col-md-4 d-flex align-items-stretch mt-4">
             <div class="testimonial-card p-4 text-center border rounded">
                 <p class="quote">“ E Boot provides a wide variety of IT solutions. Links station worked with us closely and helped us connect with customers through our website. ”</p>
-                <img src="{{ asset('assets/img/eboot.jpeg') }}" class="rounded-circle my-2" width="60" alt="Client">
+                <img src="{{ asset('assets/img/kokos-kitchen.webp') }}" class="rounded-circle my-2" width="60" alt="Client">
                 <h5 class="fw-bold">E Boot</h5>
                 <p>Manager, CorpX</p>
             </div>
@@ -447,7 +454,7 @@
          <div class="col-md-4 d-flex align-items-stretch mt-4">
             <div class="testimonial-card p-4 text-center border rounded">
                 <p class="quote">“ E Boot provides a wide variety of IT solutions. Links station worked with us closely and helped us connect with customers through our website. ”</p>
-                <img src="{{ asset('assets/img/eboot.jpeg') }}" class="rounded-circle my-2" width="60" alt="Client">
+                <img src="{{ asset('assets/img/Beans-And-Brownies.webp') }}" class="rounded-circle my-2" width="60" alt="Client">
                 <h5 class="fw-bold">E Boot</h5>
                 <p>Manager, CorpX</p>
             </div>
@@ -457,7 +464,7 @@
         <div class="col-md-4 d-flex align-items-stretch mt-4">
             <div class="testimonial-card p-4 text-center border rounded">
                 <p class="quote">“ E Boot provides a wide variety of IT solutions. Links station worked with us closely and helped us connect with customers through our website. ”</p>
-                <img src="{{ asset('assets/img/eboot.jpeg') }}" class="rounded-circle my-2" width="60" alt="Client">
+                <img src="{{ asset('assets/img/tra.webp') }}" class="rounded-circle my-2" width="60" alt="Client">
                 <h5 class="fw-bold">E Boot</h5>
                 <p>Manager, CorpX</p>
             </div>
@@ -466,22 +473,180 @@
         <div class="col-md-4 d-flex align-items-stretch mt-4">
             <div class="testimonial-card p-4 text-center border rounded">
                 <p class="quote">“ E Boot provides a wide variety of IT solutions. Links station worked with us closely and helped us connect with customers through our website. ”</p>
-                <img src="{{ asset('assets/img/eboot.jpeg') }}" class="rounded-circle my-2" width="60" alt="Client">
+                <img src="{{ asset('assets/img/green_residency.webp') }}" class="rounded-circle my-2" width="60" alt="Client">
                 <h5 class="fw-bold">E Boot</h5>
                 <p>Manager, CorpX</p>
             </div>
         </div>
 
     </div>
+</div> --}}
+
+{{-- testimonial --}}
+<div class="container my-5">
+    <h2 class="text-center fw-bold">OUR TESTIMONIAL</h2>
+    <p class="text-center">What Clients Say About Us?</p>
+
+    <div id="testimonialCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            {{-- cuteface_one --}}
+            <div class="carousel-item active">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">“ Our skin care brand needed recognition. Links station helped us establish our brand. ”</p>
+                    <img src="{{ asset('assets/img/cute_face.jpeg') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <h5 class="fw-bold">CUTE FACE</h5>
+                </div>
+            </div>
+{{-- quranlesson_two --}}
+            <div class="carousel-item">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">“Links Station developed my website which enabled me to connect with prospects all over the world. Their friendly staff helped me learn about website operation and online interactions.”</p>
+                    <img src="{{ asset('assets/img/quran.png') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <h5 class="fw-bold">Quran Lesson</h5>
+                </div>
+            </div>
+            {{-- quranlesson_two --}}
+
+            {{-- eboot --}}
+
+            <div class="carousel-item">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">“E boot provides a wide verity of IT solutions. Links station worked with us closely and help us connect with customers through our website.”</p>
+                    <img src="{{ asset('assets/img/eboot.jpeg') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <h5 class="fw-bold">E Boot</h5>
+                </div>
+            </div>
+
+{{-- wondering --}}
+            <div class="carousel-item">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">“Wondering peaks is a travel and tour group based in Azad Kashmir. Links station developed a marketing strategy which set us apart from the competition. ”</p>
+                    <img src="{{ asset('assets/img/wondering.jpeg') }}" class="rounded-circle my-2" width="150" alt="Client">
+                    <h5 class="fw-bold">WONDERING
+                    </h5>
+                </div>
+            </div>
+{{-- wondering --}}
+
+{{-- friends_elect --}}
+            <div class="carousel-item">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">“Links station enabled us to reach new clients through social media and helped us expand our sales beyond our outlet.  ”</p>
+                    <img src="{{ asset('assets/img/friends_elec.webp') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <h5 class="fw-bold">FRIENDS ELECTRONIC
+                    </h5>
+                </div>
+            </div>
+{{-- friends_elect --}}
+
+{{-- digital_exp --}}
+            <div class="carousel-item">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">“We provide a wide verity of outdoor advertisement solutions. Links station helped display our work us connect to new B2B customers through our website and facebook. ”</p>
+                    <img src="{{ asset('assets/img/digital_exp.jpeg') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <h5 class="fw-bold">DIGITAL EXPRESSIONS
+                    </h5>
+                </div>
+            </div>
+            {{-- digital_exp --}}
+
+{{-- mani --}}
+            <div class="carousel-item">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">“Mania wearhouse sells daily use Chinese products. We were unable to reach our target audience Links Station helped us increase our sales all over Pakistan.”</p>
+                    <img src="{{ asset('assets/img/mania.jpeg') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <h5 class="fw-bold">MANI WEARHOUSE
+                    </h5>
+                </div>
+            </div>
+
+{{-- easy_cooks --}}
+            <div class="carousel-item">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">“Links station helped increase the viewership of our cooking channel and their guidance enabled us to get our YouTube channel monetized.”</p>
+                    <img src="{{ asset('assets/img/folk.webp') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <h5 class="fw-bold">EASY COOKS
+
+                    </h5>
+                </div>
+            </div>
+
+{{-- kokos --}}
+            <div class="carousel-item">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">
+                        “We bring the taste of Dehli to your home and office. Links station enabled us to reach several customer in Karachi through FB and Instagram within our limited budget.”</p>
+
+                <img src="{{ asset('assets/img/kokos-Kitchen.webp') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <h5 class="fw-bold">KOKO'S KITCHEN
+
+                    </h5>
+                </div>
+            </div>
+
+
+{{-- beans --}}
+            <div class="carousel-item">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">“We started off as a home-based brownie brand in 2020. Links Station helped us reach our target audience with their specific targeting. We managed to increase our sales so that we managed to create a sustainable profitable business.””</p>
+                    <img src="{{ asset('assets/img/Beanns-And-Brownies.webp') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <h5 class="fw-bold">BEANS AND BROWNIES
+
+                    </h5>
+                </div>
+            </div>
+
+{{-- beans --}}
+
+            <div class="carousel-item">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">“We provide customized travel packages for tourists all over Pakistan. Links Station helped us gain customer attention and helped us establish a customer feedback system.”</p>
+                    <img src="{{ asset('assets/img/Beanns-And-Brownies') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <h5 class="fw-bold">BEANS AND BROWNIES
+
+                    </h5>
+                </div>
+            </div>
+
+
+
+            <div class="carousel-item">
+                <div class="testimonial-card p-4 text-center border rounded">
+                    <p class="quote">“We provide customized travel packages for tourists all over Pakistan. Links Station helped us gain customer attention and helped us establish a customer feedback system.”</p>
+                    <img src="{{ asset('assets/img/green_residency.webp') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <h5 class="fw-bold">GREEN RESIDENCY
+
+
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
 </div>
+{{-- testimonial --}}
+
+
+
 {{-- testimonial --}}
 
 {{-- contact_us --}}
 
 {{-- contact_us --}}
 
-<div class="container-fluid" style="background: url('{{ asset('assets/img/contact.jpg') }}') no-repeat center center; background-size: cover; padding: 150px 20px; color: white; text-align: center; min-height: 450px; position: relative;">
-    <div class="row justify-content-center align-items-center hero-section-new">
+<div class="container-fluid" style="background: url('{{ asset('assets/img/contact_us.jpg') }}') no-repeat center center; background-size: cover; padding: 150px 20px; color: white; text-align: center; min-height: 485px; position: relative;">
+    <div class="row  align-items-center hero-section-new">
         <div class="col-md-6">
             <div class="contact-content">
                 <h1>Ready to Elevate Your Content?</h1>

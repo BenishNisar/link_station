@@ -29,7 +29,7 @@
 
 {{-- services --}}
 {{-- services --}}
-<div class="container-fluid my-5 service-container">
+<div class="container-fluid my-5 service-container mt-0">
     <div class="container">
         <h1 class="text-center text-white mb-4">Our Services</h1>
         <div class="row g-4">

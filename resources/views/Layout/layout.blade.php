@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links Station</title>
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
@@ -11,7 +14,7 @@
     {{-- css --}}
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     {{-- favicon --}}
-    <link rel="shortcut icon" href="{{ asset("assets/img/Logos.png") }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset("assets/img/link_station.webp") }}" type="image/x-icon">
 
 </head>
 <body>
@@ -69,6 +72,13 @@
 @yield("Content")
 
 <!-- footer -->
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/922132640403?text=Chat%20on%20WhatsApp%20with%20%2B92%2021%2032640403"
+   class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- WhatsApp Button CSS -->
 
 
 <footer>
@@ -98,12 +108,12 @@
             <div class="col-md-4">
                 <h5 class="fw-bold text-uppercase mb-3">Popular Services</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="footer-link">All Services</a></li>
-                    <li><a href="#" class="footer-link">Packaging Designing</a></li>
-                    <li><a href="#" class="footer-link">App Development</a></li>
-                    <li><a href="#" class="footer-link">Digital Marketing</a></li>
-                    <li><a href="#" class="footer-link">Web Designing & SEO</a></li>
-                    <li><a href="#" class="footer-link">Travel Documentation</a></li>
+                    <li><a href="{{ asset('service') }}" class="footer-link">All Services</a></li>
+                    <li><a href="{{ asset('packaging') }}" class="footer-link">Packaging Designing</a></li>
+                    <li><a href="{{ asset('appdevelopment') }}" class="footer-link">App Development</a></li>
+                    <li><a href="{{ asset('digital') }}" class="footer-link">Digital Marketing</a></li>
+                    <li><a href="{{ asset('webdevelopment') }}" class="footer-link">Web Designing & SEO</a></li>
+                    <li><a href="{{ asset('traveldoc') }}" class="footer-link">Travel Documentation</a></li>
                 </ul>
             </div>
 
@@ -147,6 +157,8 @@
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script src="{{ asset("assets/js/app.js")}}"></script>
 

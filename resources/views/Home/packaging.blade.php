@@ -17,7 +17,7 @@
 
         <!-- Text Section -->
         <div class="col-md-6">
-            <h2 class="fw-bold text-dark mb-3" style="font-size: 32px;">Build a Powerful Website for Your Brand</h2>
+            <h2 class="fw-bold text-dark mb-3" style="font-size: 32px;color:#4dc6f4;">Packaging Designing</h2>
             <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
 
                 This is the purpose of packaging. Packaging, when done correctly and creatively, is ultimately what sells your product. It’s more than just putting your logo on a package or coming up with a cool label or sticker. It draws attention, sends a message, and makes consumers feel a certain way.
