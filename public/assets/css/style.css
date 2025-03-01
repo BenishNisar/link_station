@@ -708,7 +708,7 @@ h5 {
 /* Gradient Text */
 .text-gradient {
     background: linear-gradient(90deg, #ff8a00, #e52e71);
-  
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

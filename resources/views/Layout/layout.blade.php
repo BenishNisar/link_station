@@ -88,8 +88,7 @@
     background-size: cover;
     background-position: center;
     color: #fff;
-    padding: 60px 0;
-">
+    padding: 60px 0;">
     <div class="container">
         <div class="row">
             <!-- Logo & About Section -->
