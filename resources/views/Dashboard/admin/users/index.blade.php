@@ -1,4 +1,16 @@
+
 @extends("Layout.layouttwo")
+<style>
+    .profile-image {
+    width: 60px; /* Adjust as needed */
+    height: 60px; /* Adjust as needed */
+    object-fit: cover; /* Ensures the image is properly cropped */
+    border-radius: 50%; /* Makes it circular */
+    border: 2px solid #ddd; /* Optional: Adds a border */
+    padding: 2px; /* Optional: Adds spacing */
+}
+
+</style>
 @section("AdminContent")
 
 <style>
@@ -87,7 +99,7 @@
 <div class="container-fluid mt-4 table-container">
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <h1 style="font-size: 23px;">Users</h1>
-        <a href="{{ url('dashboard/admin/users/add') }}" class="add-new-btn">Add New</a>
+        <a href="{{ url('users/add') }}" class="add-new-btn">Add New</a>
     </div>
 
     <div class="table-wrapper">
@@ -105,17 +117,15 @@
                                     <th>Country</th>
                                     <th>City</th>
                                     <th>Profile_Image</th>
+                                    <th>zip_code</th>
                                     <th>Role_id</th>
-                                    <th>Martial_status</th>
-                                    <th>Department</th> <!-- Add this header -->
-                                    <th>employee_name</th>
-                                    <th>designation</th>
-                                    <th>location</th>
+
+                                    <th>organization</th>
 
                                     <th>Actions</th> <!-- Add actions column -->
                                 </tr>
                             </thead>
-                            {{-- <tbody>
+                             <tbody>
                                 @foreach($users as $item)
 
                                     <tr>
@@ -129,32 +139,25 @@
                                         <td>{{ $item->city }}</td>
                                         <td>
                                             @if($item->profile_img)
-                                                <img src="{{ asset($item->profile_img) }}" alt="Profile Image" style="width: 50px; height: auto;">
+
+                                            <img src="{{ asset($item->profile_img) }}" width="50px" height="50px" alt="Profile Image">
                                             @else
                                                 No Image
                                             @endif
                                         </td>
-                                        <td>{{ $item->role_name }}</td>
-                                        <td>{{ $item->martial_status }}</td>
-              <td>{{ $item->department_name ?? 'N/A' }}</td> <!-- Display department name -->
-              <td>{{ $item->employee_name }}</td>
-    <td>{{ $item->designation }}</td>
-    <td>{{ $item->location_name ?? 'N/A' }}</td> <!-- Display location_name -->
+                                        <td>{{ $item->zip_code }}</td>
+
+                                        <td>{{ $item->role_id }}</td>
+                                        <td>{{ $item->organization }}</td>
 
                                         <td class="actions">
-                                            {{-- <a href="{{ route('dashboard.admin.users.edit', $item->id) }}"><i class="fas fa-edit"></i></a> <!-- Edit -->
 
-                                            <form action="{{ route('dashboard.admin.users.delete', $item->id) }}" method="POST" style="display:inline;">
-                                                @csrf
-                                                @method('DELETE')
 
-                                                <button type="submit" class="btn  btn-sm" onclick="return confirm('Are you sure you want to delete this user?');"><i class="fas fa-trash-alt"></i></a></button>
-                                                 --}}
 
-{{--
-                                                 <a href="{{ route('dashboard.admin.users.show', $item->id) }}"><i class="fas fa-eye" title="View"></i></a>
-                                                 <a href="{{ route('dashboard.admin.users.edit', $item->id) }}"><i class="fas fa-edit" title="Edit"></i></a>
-                                                 <form action="{{ route('dashboard.admin.users.delete', $item->id) }}" method="POST" style="display: inline;">
+
+                                                 {{-- <a href="{{ route('dashboard.admin.users.show', $item->id) }}"><i class="fas fa-eye" title="View"></i></a> --}}
+                                                 <a href="{{ route('Dashboard.admin.users.edit', $item->id) }}"><i class="fas fa-edit" title="Edit"></i></a>
+                                                 <form action="{{ route('Dashboard.admin.users.delete', $item->id) }}" method="POST" style="display: inline;">
                                                      @csrf
                                                      @method('DELETE')
                                                      <button type="submit" style="border: none; background: none; padding: 0;">
@@ -164,7 +167,7 @@
                                             </form>
                                         </td>
                                     </tr>
-                                {{-- @endforeach --}} 
+                                 @endforeach
                             </tbody>
                         </table>
                     </div>
