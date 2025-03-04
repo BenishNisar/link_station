@@ -6,6 +6,7 @@ use App\Http\Controllers\AppDevelopmemtBacController;
 use App\Http\Controllers\AppDevelopmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\CustomerBacController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DigitalController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\RolesController;
 use App\Http\Controllers\SEOController;
 use App\Http\Controllers\SEOOptimizationBacController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TravelDocBacController;
 use App\Http\Controllers\TravelDocController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\WebDevelopmentBacController;
@@ -127,3 +129,23 @@ Route::post("seo_opt/store", [SEOOptimizationBacController::class, "store"])->na
 Route::get("seo_opt/edit/{id}", [SEOOptimizationBacController::class, "edit"])->name("Dashboard.admin.seo_opt.edit");
 Route::put("seo_opt/update/{id}", [SEOOptimizationBacController::class, "update"])->name("Dashboard.admin.seo_opt.update");
 Route::delete("seo_opt/delete/{id}", [SEOOptimizationBacController::class, "destroy"])->name("Dashboard.admin.seo_opt.delete");
+
+
+// travel_doc
+Route::get("travel", [TravelDocBacController::class, "index"])->name("Dashboard.admin.travel.index");
+Route::get("travel/add", [TravelDocBacController::class, "add"])->name("Dashboard.admin.travel.add");
+Route::post("travel/store", [TravelDocBacController::class, "store"])->name("Dashboard.admin.travel.store");
+Route::get("travel/edit/{id}", [TravelDocBacController::class, "edit"])->name("Dashboard.admin.travel.edit");
+Route::put("travel/update/{id}", [TravelDocBacController::class, "update"])->name("Dashboard.admin.travel.update");
+Route::delete("travel/delete/{id}", [TravelDocBacController::class, "destroy"])->name("Dashboard.admin.travel.delete");
+
+
+
+// customer
+Route::get("customer", [CustomerBacController::class, "index"])->name("Dashboard.admin.customer.index");
+Route::get("customer/add", [CustomerBacController::class, "add"])->name("Dashboard.admin.customer.add");
+Route::post("customer/store", [CustomerBacController::class, "store"])->name("Dashboard.admin.customer.store");
+Route::get("customer/edit/{id}", [CustomerBacController::class, "edit"])->name("Dashboard.admin.customer.edit");
+Route::put("customer/update/{id}", [CustomerBacController::class, "update"])->name("Dashboard.admin.customer.update");
+Route::delete("customer/delete/{id}", [CustomerBacController::class, "destroy"])->name("Dashboard.admin.customer.delete");
+

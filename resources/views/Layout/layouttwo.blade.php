@@ -270,7 +270,7 @@
           </li>
 
           <li>
-            <a   href="">
+            <a   href="{{ asset('travel') }}">
               <i class="bi bi-circle"></i><span>Travel Documentation</span>
             </a>
           </li>
@@ -278,7 +278,7 @@
 
 
           <li>
-            <a   href="">
+            <a href="{{ asset('customer') }}">
               <i class="bi bi-circle"></i><span>Customer Liaison</span>
             </a>
           </li>
