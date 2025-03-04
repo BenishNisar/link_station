@@ -216,18 +216,75 @@
 
 
 
-
-
-
-
-
-
-
-
-
             </ul>
           </li>
 
+
+
+
+
+
+
+
+      <li class="nav-item" >
+        <a   class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <i style="font-size: 12px; font-weight:bolder; color:rgba(12, 12, 12, 0.829);" class="fas fa-exclamation-triangle"></i>
+            <span style="font-size: 12px; font-weight:bolder; color:rgba(12, 12, 12, 0.829);">Courses</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a  href="{{ asset('web_development') }}">
+              <i class="bi bi-circle"></i><span >web development</span>
+            </a>
+          </li>
+
+
+
+
+          <li>
+            <a href="{{ asset('package_detail') }}">
+              <i class="bi bi-circle"></i><span >Packaging Details</span>
+            </a>
+          </li>
+
+
+          <li>
+            <a href="{{ asset('app_development') }}">
+              <i class="bi bi-circle"></i><span >App Development</span>
+            </a>
+          </li>
+
+
+
+          <li>
+            <a  href="{{ asset('digital_market') }}">
+              <i class="bi bi-circle"></i><span >Digital Marketing</span>
+            </a>
+          </li>
+
+
+          <li >
+            <a href="{{ asset('seo_opt') }}">
+              <i class="bi bi-circle"></i><span >SEO Optimization</span>
+            </a>
+          </li>
+
+          <li>
+            <a   href="">
+              <i class="bi bi-circle"></i><span>Travel Documentation</span>
+            </a>
+          </li>
+
+
+
+          <li>
+            <a   href="">
+              <i class="bi bi-circle"></i><span>Customer Liaison</span>
+            </a>
+          </li>
+
+        </ul>
+      </li><!-- End Components Nav -->
 
           <li class="nav-item">
             <a href="{{ asset('contactus') }}" style="color:black" class="nav-link collapsed" >
