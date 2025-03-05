@@ -106,7 +106,7 @@ class WebDevelopmentBacController extends Controller
 
         $webDevelopment->delete();
 
-        return redirect()->route('dashboard.admin.web_development.index')->with('success', 'Record deleted successfully.');
+        return redirect()->route('Dashboard.admin.web_development.index')->with('success', 'Record deleted successfully.');
     }
 
 

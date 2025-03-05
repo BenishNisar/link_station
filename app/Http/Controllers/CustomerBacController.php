@@ -44,7 +44,7 @@ class CustomerBacController extends Controller
             'img' => $path, // Store in database as "img"
         ]);
 
-        return redirect()->route('Dashboard.admin.app_development.index')->with('success', 'Record added successfully.');
+        return redirect()->route('Dashboard.admin.customer.index')->with('success', 'Record added successfully.');
     }
 
 
@@ -94,9 +94,41 @@ class CustomerBacController extends Controller
     //     return redirect()->route('Dashboard.admin.customer.index')->with('success', 'Customer updated successfully.');
     // }
 
-    /**
-     * Remove the specified record.
-     */
+
+    public function update(Request $request, $id)
+    {
+        $customer = CustomerBac::findOrFail($id);
+
+        $request->validate([
+            'title' => 'required|string|max:800',
+            'descripation' => 'required|string|max:900',
+            'img' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        if ($request->hasFile('img')) {
+            // Delete old image if exists
+            if ($customer->img && file_exists(public_path($customer->img))) {
+                unlink(public_path($customer->img));
+            }
+
+            // Upload new image
+            $file = $request->file('img');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = 'Dashboard_assets/' . $filename;
+            $file->move(public_path('Dashboard_assets'), $filename);
+
+            // Update image column
+            $customer->img = $path;
+        }
+
+        $customer->update([
+            'title' => $request->title,
+            'descripation' => $request->descripation,
+            'img' => $customer->img, // Keeps old image if no new one is uploaded
+        ]);
+
+        return redirect()->route('Dashboard.admin.customer.index')->with('success', 'Record updated successfully.');
+    }
     public function destroy($id)
     {
         $customer = CustomerBac::findOrFail($id);

@@ -120,14 +120,17 @@
             <div class="col-md-4">
                 <h5 class="fw-bold text-uppercase mb-3">Contact Info</h5>
                 <ul class="list-unstyled">
-                    <li class="footer-contact"><i class="fas fa-map-marker-alt"></i> 14th & 15th Floor, BRR Tower, I.I Chundrigar Road, Karachi</li>
-                    <li class="footer-contact"><i class="fas fa-phone"></i> 021 32640403</li>
+                    <li class="footer-contact"><i class="fas fa-map-marker-alt"></i>{{ $officeDetails->location }}</li>
+                    <li class="footer-contact"><i class="fas fa-phone"></i> {{ $officeDetails->contact }}</li>
                     <li class="footer-contact">
                         <i class="fas fa-envelope"></i>
-                        <a href="mailto:contact@linksstation.com.pk" class="footer-link">contact@linksstation.com.pk</a>
+                        <a href="mailto:contact@linksstation.com.pk" class="footer-link">{{ $officeDetails->email }}</a>
                     </li>
                 </ul>
             </div>
+
+
+
         </div>
     </div>
 </div>

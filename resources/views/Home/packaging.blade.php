@@ -6,8 +6,13 @@
         <!-- Image Section -->
         <div class="col-md-6">
             <div class="position-relative">
-                <img src="{{ asset('assets/img/graphic.jpg') }}" alt="Web Development"
-                    class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto;">
+                @if(isset($packagingData) && $packagingData->img)
+                    <img src="{{ asset($packagingData->img) }}" alt="Packaging Design"
+                        class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto;">
+                @else
+                    <img src="{{ asset('assets/img/default-placeholder.jpg') }}" alt="Default Image"
+                        class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto;">
+                @endif
 
                 <!-- Decorative Shape (Optional) -->
                 <div class="position-absolute top-50 start-50 translate-middle bg-primary rounded-circle"
@@ -17,13 +22,19 @@
 
         <!-- Text Section -->
         <div class="col-md-6">
-            <h2 class="fw-bold text-dark mb-3" style="font-size: 32px;color:#4dc6f4;">Packaging Designing</h2>
-            <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
+            <h2 class="fw-bold text-dark mb-3" style="font-size: 32px;color:#4dc6f4;">{{ $packagingData->title }} </h2>
 
-                This is the purpose of packaging. Packaging, when done correctly and creatively, is ultimately what sells your product. It’s more than just putting your logo on a package or coming up with a cool label or sticker. It draws attention, sends a message, and makes consumers feel a certain way.
+            @if(isset($packagingData))
 
-Packaging is a form of branding and knowing how to make your product stand out amongst all the others on the shelves can be hard, so take a look at these 50 creative and unique packaging examples and tips to draw inspiration and learn how to make your packaging appeal to the masses.
+
+                <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
+                    {{ $packagingData->descripation }}
                 </p>
+            @else
+                <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
+                    No Packaging Designing data available. Please update it from the admin panel.
+                </p>
+            @endif
 
             <!-- CTA Buttons -->
             <div class="d-flex align-items-center mt-4">
@@ -43,4 +54,3 @@ Packaging is a form of branding and knowing how to make your product stand out a
 </div>
 
 @endsection
-

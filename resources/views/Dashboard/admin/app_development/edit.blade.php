@@ -70,7 +70,7 @@
 
 <div class="container mt-4">
     <div class="form-container">
-        <h1 class="text-center" style="font-size: 23px; font-weight: bolder;">Edit Packaging Details</h1>
+        <h1 class="text-center" style="font-size: 23px; font-weight: bolder;">App Development</h1>
 
         <form action="{{ route('Dashboard.admin.app_development.update', $appdevelopment->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -117,7 +117,7 @@
 
             <!-- Submit and Cancel Buttons -->
             <div class="d-flex justify-content-end mt-3">
-                <a href="{{ url('package_details') }}" class="btn btn-secondary custom-btn">Cancel</a>
+                <a href="{{ url('app_development') }}" class="btn btn-secondary custom-btn">Cancel</a>
                 <button type="submit" class="btn btn-danger custom-btn ms-2">Save Changes</button>
             </div>
         </form>

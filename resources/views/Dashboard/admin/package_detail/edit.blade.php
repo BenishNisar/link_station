@@ -125,7 +125,7 @@
 
             <!-- Submit and Cancel Buttons -->
             <div class="d-flex justify-content-end mt-3">
-                <a href="{{ url('package_details') }}" class="btn btn-secondary custom-btn">Cancel</a>
+                <a href="{{ url('package_detail') }}" class="btn btn-secondary custom-btn">Cancel</a>
                 <button type="submit" class="btn btn-danger custom-btn ms-2">Save Changes</button>
             </div>
         </form>

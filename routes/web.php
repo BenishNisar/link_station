@@ -11,6 +11,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DigitalController;
 use App\Http\Controllers\DigitalMarketingController;
+use App\Http\Controllers\OfficeDetailsController;
 use App\Http\Controllers\PackageDetailsBacController;
 use App\Http\Controllers\PackagingController;
 use App\Http\Controllers\RolesController;
@@ -149,3 +150,12 @@ Route::get("customer/edit/{id}", [CustomerBacController::class, "edit"])->name("
 Route::put("customer/update/{id}", [CustomerBacController::class, "update"])->name("Dashboard.admin.customer.update");
 Route::delete("customer/delete/{id}", [CustomerBacController::class, "destroy"])->name("Dashboard.admin.customer.delete");
 
+
+
+// offcicedetails
+Route::get("officedetails", [OfficeDetailsController::class, "index"])->name("Dashboard.admin.officedetails.index");
+Route::get("officedetails/add", [OfficeDetailsController::class, "add"])->name("Dashboard.admin.officedetails.add");
+Route::post("officedetails/store", [OfficeDetailsController::class, "store"])->name("Dashboard.admin.officedetails.store");
+Route::get("officedetails/edit/{id}", [OfficeDetailsController::class, "edit"])->name("Dashboard.admin.officedetails.edit");
+Route::put("officedetails/update/{id}", [OfficeDetailsController::class, "update"])->name("Dashboard.admin.officedetails.update");
+Route::delete("officedetails/delete/{id}", [OfficeDetailsController::class, "destroy"])->name("Dashboard.admin.officedetails.delete");

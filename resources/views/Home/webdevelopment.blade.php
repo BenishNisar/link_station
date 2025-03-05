@@ -1,4 +1,3 @@
-
 @extends("Layout.layout")
 @section("Content")
 
@@ -7,8 +6,13 @@
         <!-- Image Section -->
         <div class="col-md-6 position-relative">
             <div class="glassmorphism-card p-4 shadow-lg rounded-4">
-                <img src="{{ asset('assets/img/webdesign.jpg') }}" alt="Web Development"
-                    class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto; border-radius: 20px;">
+                @if(isset($webDevData) && $webDevData->img)
+                    <img src="{{ asset($webDevData->img) }}" alt="Web Development"
+                        class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto; border-radius: 20px;">
+                @else
+                    <img src="{{ asset('assets/img/default-placeholder.jpg') }}" alt="Default Image"
+                        class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto; border-radius: 20px;">
+                @endif
 
                 <!-- Decorative Gradient Shape -->
                 <div class="position-absolute top-50 start-50 translate-middle bg-gradient-primary rounded-circle"
@@ -18,18 +22,19 @@
 
         <!-- Text Section -->
         <div class="col-md-6">
-            <h2 class="fw-bold mb-3" style="font-size: 36px;color:#4dc6f4;">🚀 Web Development</h2>
+            <h2 class="fw-bold mb-3" style="font-size: 36px;color:#4dc6f4;">🚀 {{ $webDevData->title }}</h2>
 
-            <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
-                Your <strong>website</strong> is the **center of your digital presence**.
-                It’s one of the few places where you can deliver your **brand’s message** free of distortion or distraction.
-                <strong>Links Station’s Web Development services</strong> are perfect for brands at any stage. 🚀
-            </p>
+            @if(isset($webDevData))
+             
 
-            <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
-                Our **web development experts** help you **grow your brand** through websites, making your business a **center mark in the market as fast as possible.**
-                If your site isn’t performing to expectations, we offer a **detailed audit** & improve your **site architecture, design, & responsiveness.** 📈
-            </p>
+                <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
+                    {{ $webDevData->descripation }}
+                </p>
+            @else
+                <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
+                    No Web Development data available. Please update it from the admin panel.
+                </p>
+            @endif
 
             <!-- CTA Buttons -->
             <div class="d-flex align-items-center mt-4">
@@ -47,7 +52,5 @@
         </div>
     </div>
 </div>
-
-
 
 @endsection

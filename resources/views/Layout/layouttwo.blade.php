@@ -288,8 +288,16 @@
 
           <li class="nav-item">
             <a href="{{ asset('contactus') }}" style="color:black" class="nav-link collapsed" >
-                <i class="fas fa-phone-alt" style="color:black"></i>
+                <i class="fas fa-phone-alt" style="color:blue"></i>
                 <span>Contact</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="{{ asset('officedetails') }}" style="color:black" class="nav-link collapsed" >
+                <i class="fas fa-building" style="color:#b10937;"></i>
+
+                <span>Links Station - Office Details</span>
             </a>
         </li>
 
@@ -297,19 +305,9 @@
 
 
 
-     <li class="nav-item">
-      <a  class="nav-link collapsed" href="">
-          <i style="color:black" class="bi bi-chat-dots"></i>
-        <span>Feedback</span>
-      </a>
-    </li>
 
-    <li class="nav-item">
-      <a  class="nav-link collapsed" href="pages-faq.html">
-        <i style="color:black" class="bi bi-question-circle"></i>
-        <span>F.A.Q</span>
-      </a>
-    </li>
+
+
 
 
 

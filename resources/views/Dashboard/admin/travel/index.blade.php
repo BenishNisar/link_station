@@ -96,7 +96,7 @@
         <h1 style="font-size: 23px; font-weight: bolder;">Web Development</h1>
 
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search roles...">
+            <input type="text" class="search-input" placeholder="Search travel...">
             <a href="{{ url('travel/add') }}" class="add-new-btn">Add New </a>
         </div>
     </div>

@@ -1,4 +1,3 @@
-
 @extends("Layout.layout")
 @section("Content")
 
@@ -7,8 +6,13 @@
         <!-- Image Section -->
         <div class="col-md-6 position-relative">
             <div class="glassmorphism-card p-4 shadow-lg rounded-4">
-                <img src="{{ asset('assets/img/mobile_app.jpeg') }}" alt="Web Development"
-                    class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto; border-radius: 20px;">
+                @if(isset($appData) && $appData->img)
+                    <img src="{{ asset($appData->img) }}" alt="App Development"
+                        class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto; border-radius: 20px;">
+                @else
+                    <img src="{{ asset('assets/img/default-placeholder.jpg') }}" alt="Default Image"
+                        class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto; border-radius: 20px;">
+                @endif
 
                 <!-- Decorative Gradient Shape -->
                 <div class="position-absolute top-50 start-50 translate-middle bg-gradient-primary rounded-circle"
@@ -18,18 +22,19 @@
 
         <!-- Text Section -->
         <div class="col-md-6">
-            <h2 class="fw-bold mb-3" style="font-size: 36px;color:#4dc6f4;">🚀 App Development</h2>
-            <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
-                Get your brand on your customer’s fingertips with interactive responsive apps by Links Station. Your app enables your customers to connect with your business on an interactive level. You can use your app to increase your brand recognition, post special deals, collect orders & much more.
-            </p>
+            <h2 class="fw-bold mb-3" style="font-size: 36px;color:#4dc6f4;">🚀 {{ $appData->title }}</h2>
 
-            <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
-                Our App development team experts can help you in growing your brand through your APP and make your brand a center mark in the market as fast as possible.
-            </p>
+            @if(isset($appData))
+             
 
-            <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
-                If your APP is already built but isn’t performing to expectations, we can perform a detailed audit and work with you to improve APP architecture, design, and responsiveness.
-            </p>
+                <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
+                    {{ $appData->descripation }}
+                </p>
+            @else
+                <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
+                    No App Development data available. Please update it from the admin panel.
+                </p>
+            @endif
 
             <!-- CTA Buttons -->
             <div class="d-flex align-items-center mt-4">
@@ -47,7 +52,5 @@
         </div>
     </div>
 </div>
-
-
 
 @endsection

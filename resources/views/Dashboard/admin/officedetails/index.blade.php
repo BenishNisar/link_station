@@ -93,11 +93,11 @@
 
 <div class="container-fluid mt-4 table-container">
     <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="font-size: 23px; font-weight: bolder;">Customer</h1>
+        <h1 style="font-size: 23px; font-weight: bolder;">Contact Us</h1>
 
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search Customer...">
-            <a href="{{ url('customer/add') }}" class="add-new-btn">Add New </a>
+            <input type="text" class="search-input" placeholder="Search roles...">
+            <a href="{{ url('officedetails/add') }}" class="add-new-btn">Add New </a>
         </div>
     </div>
 
@@ -106,36 +106,41 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Title</th>
-                    <th>Descripation</th>
-                    <th>Profile_Image</th>
+                    <th>Location</th>
+                    <th>Email</th>
+                    <th>Contact</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($customers as $item)
+                @foreach ($office as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
-                    <td>{{ $item->title }}</td>
-                    <td>{{ $item->descripation }}</td>
-                    <td>
-                        @if ($item->img)
-                            <img src="{{ asset($item->img) }}" width="30" height="30" alt="Image">
-                        @else
-                            No Image
-                        @endif
-                    </td>
-                    <td class="actions">
+                    <td>{{ $item->location }}</td>
+                    <td>{{ $item->email }}</td>
+                    <td>{{ $item->contact }}</td>
 
-                        <a href="{{ route('Dashboard.admin.customer.edit', $item->id) }}"><i class="fas fa-edit" title="Edit"></i></a>
-                        <form action="{{ route('Dashboard.admin.customer.delete', $item->id) }}" method="POST" style="display: inline;">
+
+                    {{-- <td class="actions">
+
+                        <a href="{{ url('/dashboard/admin/role/edit') }}/{{ $item->id }}"><i class="fas fa-edit" title="Edit"></i></a>
+                        <a  href="{{url('/dashboard/admin/role/delete')  }}/{{$item->id }}"><i class="fas fa-trash-alt" title="Delete"></i></a>
+
+
+                    </td> --}}
+
+                    <td class="actions">
+                        {{-- <a href="{{ url('/dashboard/admin/role/show') }}/{{ $item->id }}"><i class="fas fa-eye" title="View"></i> </a> --}}
+                        <a href="{{ url('officedetails/edit') }}/{{ $item->id }}"><i class="fas fa-edit" title="Edit"></i> </a>
+<form action="{{ route('Dashboard.admin.officedetails.delete', $item->id) }}" method="POST" >
                             @csrf
                             @method('DELETE')
-                            <button type="submit" style="border: none; background: none; padding: 0;">
+                            <button type="submit" style="border: none; background: none; color: #86092b; cursor: pointer;padding: 0;">
                                 <i class="fas fa-trash-alt" title="Delete"></i>
                             </button>
                         </form>
-                    </td>
+                      </td>
+
                 </tr>
             @endforeach
                 <!-- Additional rows can be added here -->

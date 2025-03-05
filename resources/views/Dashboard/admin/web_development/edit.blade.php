@@ -1,62 +1,136 @@
+
 @extends("Layout.layouttwo")
 
 @section("AdminContent")
+<style>
+    .form-control,
+    .form-select {
+        height: 42px; /* Slightly increased height */
+        padding: 8px 14px; /* More comfortable padding */
+        border: 1px solid #ccc;
+        transition: border-color 0.3s ease-in-out;
+        border-radius: 5px; /* Slightly rounded corners */
+    }
+
+    .form-label {
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #b10937;
+        box-shadow: none;
+    }
+
+    .textarea-large {
+        height: 140px; /* Increased height for better usability */
+        resize: vertical; /* Allow vertical resizing */
+    }
+
+    .img-preview {
+        width: 120px; /* Increased size */
+        height: 120px;
+        border-radius: 8px;
+        object-fit: cover; /* Ensure proper fit */
+        border: 1px solid #ddd;
+        padding: 3px;
+    }
+
+    .custom-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 6px;
+    }
+
+    .btn-danger {
+        background-color: #b10937;
+        border: none;
+    }
+
+    .btn-danger:hover {
+        background-color: #8b072b;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+    .form-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
 <div class="container mt-4">
-    <h1 style="font-size: 23px; font-weight:bolder;">Edit Web Development Record</h1>
-
-    <form action="{{ route('Dashboard.admin.web_development.update', $webDevelopment->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
-
-        <!-- Row 1 -->
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control rounded-0 uniform-width" name="title" value="{{ old('title', $webDevelopment->title) }}" required />
-                @error('title')
-                    <div class="text-danger mt-1">{{ $message }}</div>
-                @enderror
-            </div>
+    <div class="form-container">
+        <h1 class="text-center" style="font-size: 23px; font-weight: bolder;">Web Development</h1>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
+        @endif
+        <form action="{{ route('Dashboard.admin.web_development.update', $webDevelopment->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
 
-        <!-- Row 2 -->
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <label for="descripation" class="form-label">Description</label>
-                <textarea class="form-control rounded-0 uniform-width" name="descripation" rows="4" required>{{ old('descripation', $webDevelopment->descripation) }}</textarea>
-                @error('descripation')
-                    <div class="text-danger mt-1">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
+            <!-- Title & Description -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" name="title" value="{{ old('title', $webDevelopment->title) }}" required />
+                    @error('title')
+                        <div class="text-danger mt-1">{{ $message }}</div>
+                    @enderror
+                </div>
 
-        <!-- Row 3 - Image Upload -->
-        <div class="row">
-            <div class="col-md-3 mb-3">
-                <label for="profile_img">Profile Image</label>
-                <input type="file" name="profile_img" class="form-control" accept="image/*">
-                @error('profile_img')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
+                <div class="col-md-6 mb-3">
+                    <label for="descripation" class="form-label">Description</label>
+                    <textarea name="descripation" class="form-control textarea-large" required>{{ old('descripation', $webDevelopment->descripation) }}</textarea>
+                    @error('descripation')
+                        <div class="text-danger mt-1">{{ $message }}</div>
+                    @enderror
+                </div>
             </div>
 
-            <!-- Show existing image -->
-            <div class="col-md-3 mb-3">
-                @if($webDevelopment->profile_img)
-                    <label>Current Image</label>
-                    <img src="{{ asset($webDevelopment->profile_img) }}" class="img-thumbnail" width="100" height="100">
-                @else
-                    <p>No Image Uploaded</p>
-                @endif
-            </div>
-        </div>
+            <!-- Image Upload & Preview -->
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3">
+                    <label for="img">Upload New Image</label>
+                    <input type="file" name="img" class="form-control" accept="image/*">
+                    @error('img')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
 
-        <!-- Submit and Cancel Buttons -->
-        <div class="mb-3" style="display: flex; justify-content: flex-end; margin-top: 2vh">
-            <a href="{{ url('web_development') }}" class="btn square-button" style="background-color:#6c757d;color:white;margin-right:10px;">Cancel</a>
-            <button style="background-color:#b10937;color:white;" type="submit" class="btn square-button">Save Changes</button>
-        </div>
-    </form>
+                <div class="col-md-6 mb-3 text-center">
+                    <label>Current Image</label><br>
+                    @if($webDevelopment->img)
+                        <img src="{{ asset($webDevelopment->img) }}" class="img-preview">
+                    @else
+                        <p>No Image Uploaded</p>
+                    @endif
+                </div>
+            </div>
+
+            <!-- Submit and Cancel Buttons -->
+            <div class="d-flex justify-content-end mt-3">
+                <a href="{{ url('web_development') }}" class="btn btn-secondary custom-btn">Cancel</a>
+                <button type="submit" class="btn btn-danger custom-btn ms-2">Save Changes</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 @endsection
