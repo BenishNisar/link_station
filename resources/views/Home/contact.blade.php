@@ -105,7 +105,7 @@
                         </div>
                         <div class="d-flex justify-content-between">
                             <button type="reset" class="btn btn-outline-danger">Cancel</button>
-                            <button type="submit" class="btn text-white px-4" style="background-color: #4bc5f3;">Send Message</button>
+                            <button type="submit" class="btn text-white px-4" style="background-color: #2464bf;">Send </button>
                         </div>
                     </form>
 

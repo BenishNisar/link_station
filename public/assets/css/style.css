@@ -24,7 +24,7 @@ body {
 }
 
 .btn-success {
-    background-color: #00aeee; /* WhatsApp Green */
+    background-color: #2464bf; /* WhatsApp Green */
     border: none;
 }
 
@@ -95,6 +95,13 @@ button:hover ~ .custom-cursor {
 }
 
 
+@media (max-width: 768px) {
+    .custom-cursor {
+        display: none;
+    }
+}
+
+/* hero */
 .hero-section {
     background: linear-gradient(to right, #fff, #00aeee); /* Two shades gradient */
     min-height: 90vh;
@@ -104,7 +111,7 @@ button:hover ~ .custom-cursor {
 }
 
 
-.video-container {
+/* .video-container {
     max-width: 90%;
     height: 100px;
     border-radius: 10px;
@@ -112,11 +119,11 @@ button:hover ~ .custom-cursor {
 }
 
 /* Responsive Video */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .video-container {
         max-width: 100%;
     }
-}
+} */
 
 .btn-primary {
     background-color: #4bc5f3;
@@ -131,21 +138,23 @@ button:hover ~ .custom-cursor {
     background-color: #0f4c5c;
     transform: translateY(-3px);
 }
-.video-container {
+/* .video-container {
     width: 100%;
     max-width: 90%;
-    height: 600px; /* Fixed height */
-    object-fit: cover; /* Ensures the video fills the area without distortion */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
+    height: 600px; Fixed height */
+    /* object-fit: cover; /* Ensures the video fills the area without distortion */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */ */
+/* } */
 
 /* Responsive Video for Small Screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .video-container {
         height: 300px; /* Smaller height on mobile */
-    }
-}
+    /* }
+}   */
+
+
 
 /* Hero Section */
 /* General Styling */
@@ -238,7 +247,7 @@ button:hover ~ .custom-cursor {
 }
 
 /* Mobile Optimization */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .hero-section {
         height: auto;
         padding: 50px 20px;
@@ -255,7 +264,55 @@ button:hover ~ .custom-cursor {
     .glass-card {
         margin-bottom: 20px;
     }
+} */
+@media (max-width: 768px) {
+    /* Hero Section Adjustments */
+    .hero-section {
+        flex-direction: column; /* Stack items in column */
+        text-align: center;
+        height: auto; /* Ensure full height */
+        padding: 30px 15px;
+    }
+
+    /* Background Image */
+    .hero-bg img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Play Button Adjustments */
+    .play-button {
+        font-size: 40px; /* Adjust size */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Reduce the width of cards for proper alignment */
+    .performance-card, .glass-card {
+        width: 90% !important;
+        margin: 10px auto; /* Center the cards */
+        padding: 15px;
+    }
+
+    /* Reduce SVG size inside performance card */
+    .progress-container svg {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Fix text alignment */
+    .new-users, .returning-users {
+        font-size: 14px;
+    }
+
+    /* Reduce margin & spacing */
+    .mt-2 {
+        margin-top: 10px !important;
+    }
 }
+
 
 
 /* Glassmorphism Cards */
@@ -721,8 +778,16 @@ h5 {
 @media (max-width: 768px) {
     /* Ensure flex container stacks on mobile */
     .d-flex.shadow-lg {
+        gap: 10px; /* Adjusts the space between buttons */
+
         flex-direction: column;
         text-align: center;
+    }
+    .d-flex.justify-content-between .btn {
+        width: 48%; /* Reduce button width */
+        text-align: center;
+        padding: 8px 12px; /* Adjust padding for better spacing */
+        font-size: 14px; /* Adjust font size */
     }
 
     /* Left section (Get in Touch) should take full width */

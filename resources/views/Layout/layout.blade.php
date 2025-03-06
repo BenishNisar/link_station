@@ -56,7 +56,7 @@
             <!-- Contact Now Button -->
             <a  href="https://wa.me/922132640403?text=Chat%20on%20WhatsApp%20with%20%2B92%2021%2032640403"
                class="btn btn-success fw-bold rounded-pill px-4 py-2 ms-5" target="_blank">
-                <i style="color: green;" class="bi bi-whatsapp"></i> Contact Now
+                <i style="color: white;" class="bi bi-whatsapp"></i> Contact Now
             </a>
         </div>
     </div>

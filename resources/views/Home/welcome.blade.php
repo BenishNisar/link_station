@@ -18,8 +18,8 @@
 
                       <!-- Contact Now Button -->
             <a  href="https://wa.me/922132640403?text=Chat%20on%20WhatsApp%20with%20%2B92%2021%2032640403"
-            class="btn btn-success fw-bold rounded-pill px-4 py-2 " target="_blank">
-             <i style="color: green;" class="bi bi-whatsapp"></i> Contact Us For a Free Consultation
+            class="btn btn-success fw-bold rounded-pill px-4 py-2 mt-3" target="_blank">
+             <i style="color:white;" class="bi bi-whatsapp"></i> Contact Us For a Free Consultation
          </a>
             </div>
 
@@ -44,7 +44,7 @@
 
 <!-- Hero Section -->
 <!-- Hero Section -->
-<div class="hero-section position-relative text-center d-flex align-items-center justify-content-center">
+<div class="hero-section position-relative text-center d-flex align-items-center justify-content-center" style="background: linear-gradient(to right, #3a1c71, #33bdf1, #ffff);">
     <!-- Background Image -->
     <div class="hero-bg">
         <img src="{{ asset('assets/img/business.gif') }}" class="hero-image" alt="Background">
@@ -64,7 +64,7 @@
         <!-- Cards Section -->
         <div class="row justify-content-center mt-4">
             <!-- Performance Card -->
-            <div class="col-md-6 col-lg-4 d-flex">
+            <div class="col-md-6 col-lg-4 d-flex mt-3">
                 <div class="performance-card glassmorphism w-100 p-3 d-flex flex-column justify-content-center align-items-center">
                     <h6 class="text-center fw-bold">Overall Performance</h6>
                     <div class="progress-container">
@@ -85,7 +85,7 @@
             </div>
 
             <!-- Steps Graph Card -->
-            <div class="col-md-6 col-lg-4 d-flex">
+            <div class="col-md-6 col-lg-4 d-flex mt-3">
                 <div class="glass-card w-100">
                     <h6>Average Time</h6>
                     <h3>1,000 <small>steps</small></h3>
@@ -356,43 +356,45 @@
             <div class="row g-4 row-equal-height">
 
                 <div class="col-md-6">
-                    <div class="feature-box">
+                    <div class="feature-box mt-2">
                         <div class="feature-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
                         <h4>Best Industry Leaders</h4>
-                        <p style="text-align: justify;font-size:12px;" >
-                            The success of a company often rests in the hands of its leaders. We are responsible for setting goals, motivating team members, and embodying the spirit and culture of the company that we work for.
+                        <p style="text-align: justify;font-size:13px;" >
+                            The success of a company often rests in the hands of its leaders. We are responsible
+                            for setting goals, motivating team members, and embodying the spirit and culture of the company
+                            that we work for.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="feature-box">
+                    <div class="feature-box mt-2">
                         <div class="feature-icon">
                             <i class="fas fa-rocket"></i>
                         </div>
                         <h4>Business Online Growth</h4>
-                        <p style="text-align:justify;font-size:12px;">
+                        <p style="text-align:justify;font-size:13px;">
 
                             Your business your way to handle. We will just to provide the best ways to help your business to reach the sky with our expert skills.                        </p>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="feature-box">
+                    <div class="feature-box mt-2">
                         <div class="feature-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h4>Proven Success Rate</h4>
-                        <p>Our clients have seen measurable growth in their revenue and brand presence.</p>
+                        <p style="text-align:justify;font-size:13px;">Our clients have seen measurable growth in their revenue and brand presence.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="feature-box">
+                    <div class="feature-box mt-2">
                         <div class="feature-icon">
                             <i class="fas fa-headset"></i>
                         </div>
                         <h4>24/7 Support</h4>
-                        <p>We are always available to assist you with your business queries and needs.</p>
+                        <p style="text-align:justify;font-size:13px;">We are always available to assist you with your business queries and needs.</p>
                     </div>
                 </div>
             </div>
