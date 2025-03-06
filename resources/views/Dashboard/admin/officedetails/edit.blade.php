@@ -1,7 +1,7 @@
 @extends("Layout.layouttwo")
 @section("AdminContent")
 <div class="container mt-4">
-    <h1 style="font-size: 23px; font-weight:bolder;">Office Details</h1>
+    <h1 style="font-size: 23px; font-weight:bolder;">Link_Stations Office Details</h1>
     {{-- <a class="" href="{{ url('dashboard/admin/role_management/viewrecords') }}">view records</a> --}}
 
     <form action="{{ route('Dashboard.admin.officedetails.update', $office->id) }}" method="POST">

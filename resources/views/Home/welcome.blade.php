@@ -24,15 +24,16 @@
             </div>
 
             <!-- Right Side: Video -->
-            <div class="col-lg-6 d-flex justify-content-center animate__animated animate__zoomIn animate__delay-1s">
-                <video
+            <div class="col-lg-6 d-flex justify-content-center animate__animated animate__zoomIn animate__delay-1s mt-3">
+                {{-- <video
                 src="{{ asset('assets/video/link_station.mp4') }}"
                 autoplay
                 muted
                 loop
                 playsinline
                 class="video-container">
-            </video>
+            </video> --}}
+            <img src="{{ asset("assets/img/first.png") }}" alt="web_img" style="width: 600px;height:600px;">
 
             </div>
 
@@ -42,6 +43,7 @@
 
 
 <!-- Hero Section -->
+<!-- Hero Section -->
 <div class="hero-section position-relative text-center d-flex align-items-center justify-content-center">
     <!-- Background Image -->
     <div class="hero-bg">
@@ -50,60 +52,55 @@
     </div>
 
     <!-- Play Button -->
-    <a href="https://www.youtube.com/watch?v=GlLRYm18mCY&t=3238" target="_blank" class="play-button">
+    <a href="https://www.youtube.com/watch?v=-WyyrKbUruA&t=16s" target="_blank" class="play-button">
         <i class="fas fa-play-circle"></i>
     </a>
 
     <!-- Content -->
-    <div class="container text-white text-center">
-        <h1 >Link Station</h1>
+    <div class="container text-dark text-center">
+        <h1 class="animate-fade-in">Link Station</h1>
         <p class="hero-subtitle">Track performance & insights in one place.</p>
 
+        <!-- Cards Section -->
         <div class="row justify-content-center mt-4">
             <!-- Performance Card -->
-          <!-- Cards Section -->
-<div class="row justify-content-center mt-4">
-    <!-- Performance Card -->
-    <div class="col-md-4 d-flex">
-        <div class="performance-card w-100 p-3 d-flex flex-column justify-content-center align-items-center">
-            <h2 class="text-center fw-bold">Overall Performance</h2>
-            <div class="progress-container">
-                <svg width="120" height="120">
-                    <circle cx="60" cy="60" r="50" class="progress-bg"></circle>
-                    <circle cx="60" cy="60" r="50" class="progress-bar"></circle>
-                </svg>
-                <div class="progress-content">
-                    <i class="fas fa-user-circle user-icon"></i>
-                    <h1 class="count">565</h1>
+            <div class="col-md-6 col-lg-4 d-flex">
+                <div class="performance-card glassmorphism w-100 p-3 d-flex flex-column justify-content-center align-items-center">
+                    <h6 class="text-center fw-bold">Overall Performance</h6>
+                    <div class="progress-container">
+                        <svg width="120" height="120">
+                            <circle cx="60" cy="60" r="50" class="progress-bg"></circle>
+                            <circle cx="60" cy="60" r="50" class="progress-bar"></circle>
+                        </svg>
+                        <div class="progress-content">
+                            <i class="fas fa-user-circle user-icon"></i>
+                            <h1 class="count">565</h1>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between text-muted mt-3 w-100">
+                        <span class="new-users">● New <strong>4.8k</strong></span>
+                        <span class="returning-users">● Rating <strong>349</strong></span>
+                    </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-between text-muted mt-3 w-100">
-                <span class="new-users">● New <strong>4.8k</strong></span>
-                <span class="returning-users">● Rating <strong>349</strong></span>
-            </div>
-        </div>
-    </div>
 
-
-
-    <!-- Steps Graph Card -->
-    <div class="col-md-4 d-flex">
-        <div class="glass-card w-100">
-            <h6>Average Time</h6>
-            <h3>1,000 <small>steps</small></h3>
-            <img src="{{ asset("assets/img/graph.webp") }}" class="img-fluid rounded" alt="Graph">
-            <div class="d-flex align-items-center justify-content-between mt-2">
-                <span>Set Reminder</span>
-                <input type="checkbox" class="form-check-input">
+            <!-- Steps Graph Card -->
+            <div class="col-md-6 col-lg-4 d-flex">
+                <div class="glass-card w-100">
+                    <h6>Average Time</h6>
+                    <h3>1,000 <small>steps</small></h3>
+                    <img src="{{ asset('assets/img/graph.webp') }}" class="img-fluid rounded" alt="Graph">
+                    <div class="d-flex align-items-center justify-content-between mt-2">
+                        <span>Set Reminder</span>
+                        <input type="checkbox" class="form-check-input">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-        </div>
-    </div>
-</div>
-
+{{-- Hero section --}}
 <!-- Our Technologies Section -->
 <div  class="container tech-section" >
 
@@ -278,35 +275,132 @@
 
 {{-- services_two --}}
 
-{{-- why choose us --}}
-<div class="container my-5 text-center">
-    <h2 class="mb-4">Why Choose Us?</h2>
-    <p>Links Station is your destination to all your business needs. In this fast moving world where everything is going digital or online from sales/marketing to billing, accounting and inventory management. It has become vital for any business whether big or small to keep itself updated according to the latest digital requirements in-order to stay a step ahead from its competitors.</p>
-    <div class="row justify-content-center">
-        <!-- First Card - Best Industry Leaders -->
-        <div class="col-md-6">
-            <div class="card_four">
-                <div class="circle">
-                    <span class="icon">&#128081;</span> <!-- 👑 Crown icon for Leadership -->
-                </div>
-                <h4>Best Industry Leaders</h4>
-                <p>The success of a company often rests in the hands of its leaders. We are responsible for setting goals, motivating team members, and embodying the spirit and culture of the company that we work for.</p>
+<!-- Why Choose Us Section -->
+<!-- Why Choose Us Section -->
+<!-- Why Choose Us Section -->
+{{-- <section class="container my-5 text-center" id="whyChooseUs">
+    <h2 class="mb-4 section-title">Why Choose Us?</h2>
+    <p class="section-description">Links Station is your destination for all business needs. In this fast-moving world, where everything is digital, we help businesses stay ahead with modern solutions.</p>
+
+    <div class="row align-items-center">
+        <!-- Left Side: Video Box -->
+        <div class="col-lg-6 position-relative">
+            <div class="video-box">
+                <img src="{{ asset("assets/img/choose.jpg") }}" class="img-fluid rounded" alt="Business Video">
+                <a href="https://www.youtube.com/watch?v=-WyyrKbUruA&t=16s" class="play-btn" target="_blank">
+                    <i class="fas fa-play"></i>
+                </a>
             </div>
         </div>
 
-        <!-- Second Card - Business Online at Your Own Pace -->
-        <div class="col-md-6">
-            <div class="card_four">
-                <div class="circle">
-                    <span class="icon">&#128640;</span> <!-- 🚀 Rocket icon for Business Growth -->
+        <!-- Right Side: Features -->
+        <div class="col-lg-6">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="feature-box animate-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4>Best Industry Leaders</h4>
+                        <p>We provide leadership that sets goals, motivates teams, and builds a strong company culture.</p>
+                    </div>
                 </div>
-                <h4>Business Online at Your Own Pace</h4>
-                <p>Your business your way to handle. We will just to provide the best ways to help your business to reach the sky with our expert skills.</p>
+                <div class="col-md-6">
+                    <div class="feature-box animate-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Business Online Growth</h4>
+                        <p>We help scale your business with expert strategies and cutting-edge digital tools.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-box animate-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Proven Success Rate</h4>
+                        <p>Our clients have seen measurable growth in their revenue and brand presence.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-box animate-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p>We are always available to assist you with your business queries and needs.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</section> --}}
+<section class="container my-5 text-center" id="whyChooseUs">
+    <h2 class="mb-4 section-title">Why Choose Us?</h2>
+    <p class="section-description">Links Station is your destination for all business needs. We help businesses stay ahead with modern solutions.</p>
 
-</div>
+    <div class="row align-items-center">
+        <!-- Left Side: Video Box -->
+        <div class="col-lg-6 position-relative">
+            <div class="video-box">
+                <img src="assets/img/choose.jpg" class="img-fluid rounded" alt="Business Video">
+                <a href="https://www.youtube.com/watch?v=-WyyrKbUruA&t=16s" class="play-btn" target="_blank">
+                    <i class="fas fa-play"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Side: Features -->
+        <div class="col-lg-6">
+            <div class="row g-4 row-equal-height">
+
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4>Best Industry Leaders</h4>
+                        <p style="text-align: justify;font-size:12px;" >
+                            The success of a company often rests in the hands of its leaders. We are responsible for setting goals, motivating team members, and embodying the spirit and culture of the company that we work for.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Business Online Growth</h4>
+                        <p style="text-align:justify;font-size:12px;">
+
+                            Your business your way to handle. We will just to provide the best ways to help your business to reach the sky with our expert skills.                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Proven Success Rate</h4>
+                        <p>Our clients have seen measurable growth in their revenue and brand presence.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p>We are always available to assist you with your business queries and needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 {{-- why choose us --}}
 
@@ -588,22 +682,23 @@
 
 
 {{-- beans --}}
-            <div class="carousel-item">
+            {{-- <div class="carousel-item">
                 <div class="testimonial-card p-4 text-center border rounded">
                     <p class="quote">“We started off as a home-based brownie brand in 2020. Links Station helped us reach our target audience with their specific targeting. We managed to increase our sales so that we managed to create a sustainable profitable business.””</p>
-                    <img src="{{ asset('assets/img/Beanns-And-Brownies.webp') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <img src="{{ asset('assets/img/Beans-And-Brownies.webp') }}" class="rounded-circle my-2" width="150px"  alt="Beans And Brownies">
+
                     <h5 class="fw-bold">BEANS AND BROWNIES
 
                     </h5>
                 </div>
-            </div>
+            </div> --}}
 
 {{-- beans --}}
 
             <div class="carousel-item">
                 <div class="testimonial-card p-4 text-center border rounded">
                     <p class="quote">“We provide customized travel packages for tourists all over Pakistan. Links Station helped us gain customer attention and helped us establish a customer feedback system.”</p>
-                    <img src="{{ asset('assets/img/Beanns-And-Brownies') }}" class="rounded-circle my-2" width="150px" alt="Client">
+                    <img src="{{ asset('assets/img/Beans-And-Brownies.webp') }}" class="rounded-circle my-2" width="150px" alt="Client">
                     <h5 class="fw-bold">BEANS AND BROWNIES
 
                     </h5>
@@ -673,5 +768,24 @@
         </div>
     </div>
 </div>
+
+
+
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const animatedElements = document.querySelectorAll(".animate-card");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        animatedElements.forEach(el => observer.observe(el));
+    });
+</script>
+
+
 
 @endsection

@@ -70,7 +70,7 @@
 
 <div class="container mt-4">
     <div class="form-container">
-        <h1 class="text-center" style="font-size: 23px; font-weight: bolder;">Digital Marketing</h1>
+        <h1 class="text-center" style="font-size: 23px; font-weight: bolder;">App Development</h1>
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

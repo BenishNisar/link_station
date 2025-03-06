@@ -30,15 +30,15 @@
                 <ul class="list-unstyled">
                     <li class="mb-2">
                         <i class="fas fa-map-marker-alt text-primary"></i>
-                        14th & 15th Floor, BRR Tower, I.I Chundrigar Road, Karachi
+                        {{ $officeDetails->location }}
                     </li>
                     <li class="mb-2">
                         <i class="fas fa-envelope text-primary"></i>
-                        <a href="mailto:contact@linksstation.com.pk" class="text-dark">contact@linksstation.com.pk</a>
+                        <a href="mailto:contact@linksstation.com.pk" class="text-dark">{{ $officeDetails->email }}</a>
                     </li>
                     <li class="mb-2">
                         <i class="fas fa-phone text-primary"></i>
-                        <a href="tel:02132640403" class="text-dark">021 32640403</a>
+                        <a href="tel:02132640403" class="text-dark">{{ $officeDetails->contact }}</a>
                     </li>
                 </ul>
                 <h5 class="mt-4">Keep in Touch</h5>

@@ -14,7 +14,7 @@
             <div class="card text-white bg-primary">
                 <div class="card-body">
                     <h5 class="card-title">Total Users</h5>
-                    <p class="card-text"><i class="fas fa-users"></i> 5,320</p>
+                    <p class="card-text"><i class="fas fa-users"></i>{{ $totalUsers }}</p>
                 </div>
             </div>
         </div>
@@ -22,8 +22,8 @@
         <div class="col-md-3">
             <div class="card text-white bg-success">
                 <div class="card-body">
-                    <h5 class="card-title">Orders Today</h5>
-                    <p class="card-text"><i class="fas fa-shopping-cart"></i> 150</p>
+                    <h5 class="card-title">Roles</h5>
+                    <p class="card-text"><i class="fas fa-shopping-cart"></i>  {{ $totalRoles }}</p>
                 </div>
             </div>
         </div>
@@ -31,8 +31,8 @@
         <div class="col-md-3">
             <div class="card text-white bg-warning">
                 <div class="card-body">
-                    <h5 class="card-title">Revenue</h5>
-                    <p class="card-text"><i class="fas fa-dollar-sign"></i> $12,500</p>
+                    <h5 class="card-title">Web_Development</h5>
+                    <p class="card-text"><i class="fas fa-dollar-sign"></i> {{ $webprojects }}</p>
                 </div>
             </div>
         </div>
@@ -40,8 +40,8 @@
         <div class="col-md-3">
             <div class="card text-white bg-danger">
                 <div class="card-body">
-                    <h5 class="card-title">Pending Orders</h5>
-                    <p class="card-text"><i class="fas fa-exclamation-circle"></i> 23</p>
+                    <h5 class="card-title">Travel</h5>
+                    <p class="card-text"><i class="fas fa-exclamation-circle"></i> {{ $travel }}</p>
                 </div>
             </div>
         </div>

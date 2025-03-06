@@ -1,7 +1,7 @@
 @extends("Layout.layouttwo")
 @section("AdminContent")
 <div class="container mt-4">
-    <h1 style="font-size: 23px; font-weight:bolder;">Role Management</h1>
+    <h1 style="font-size: 23px; font-weight:bolder;">Contact</h1>
     {{-- <a class="" href="{{ url('dashboard/admin/role_management/viewrecords') }}">view records</a> --}}
 
     <form action="{{ route('Dashboard.admin.contactus.update', $contact->id) }}" method="POST">

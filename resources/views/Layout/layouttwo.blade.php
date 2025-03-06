@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('Dashboard_assets/img/health_safety_environment.jpg')}}" rel="icon">
+  <link href="{{ asset('Dashboard_assets/img/link_station.webp') }}" rel="icon">
   <link href="{{ asset( 'Dashboard_assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -323,14 +323,14 @@
 
 
 
-    <!-- ======= Footer ======= -->
+    {{-- <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
           &copy; Copyright <strong><span>© 2025 All Rights Reserved | Designed with ❤️ by </span></strong>Links Station
         </div>
 
 
-      </footer><!-- End Footer -->
+      </footer><!-- End Footer --> --}}
 
       <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

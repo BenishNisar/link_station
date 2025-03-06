@@ -93,10 +93,10 @@
 
 <div class="container-fluid mt-4 table-container">
     <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="font-size: 23px; font-weight: bolder;">Contact Us</h1>
+        <h1 style="font-size: 23px; font-weight: bolder;">Link_Stations Office Details</h1>
 
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search roles...">
+            <input type="text" class="search-input" placeholder="Search Office Details...">
             <a href="{{ url('officedetails/add') }}" class="add-new-btn">Add New </a>
         </div>
     </div>

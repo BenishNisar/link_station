@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
+use App\Models\Role;
+use App\Models\WebDevelopment;
+use App\Models\TravelDoc;
 
 use Illuminate\Http\Request;
 
@@ -8,6 +12,12 @@ class DashboardController extends Controller
 {
     //
     public function index(){
-        return view("Dashboard.admin.dashboard");
+        $totalUsers = User::count();
+        $totalRoles = Role::count();
+        $webprojects = WebDevelopment::count();
+        $travel = TravelDoc::count();
+        return view("Dashboard.admin.dashboard", compact("totalUsers", "totalRoles", "webprojects", "travel"));
+
+
     }
 }

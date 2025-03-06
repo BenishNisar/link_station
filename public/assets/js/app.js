@@ -24,3 +24,7 @@ document.getElementById("playBtn").addEventListener("click", function(event) {
 });
 
 // animation
+
+
+
+//animated_choose

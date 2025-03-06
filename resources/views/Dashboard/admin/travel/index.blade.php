@@ -93,7 +93,7 @@
 
 <div class="container-fluid mt-4 table-container">
     <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="font-size: 23px; font-weight: bolder;">Web Development</h1>
+        <h1 style="font-size: 23px; font-weight: bolder;">Travel</h1>
 
         <div class="search-container">
             <input type="text" class="search-input" placeholder="Search travel...">
