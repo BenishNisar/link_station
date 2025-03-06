@@ -89,25 +89,26 @@
                 <!-- Right Side: Contact Form -->
                 <div class="col-md-7 p-4 bg-light">
                     <h4 class="fw-bold text-dark">Send Us A Message</h4>
-                    <form method="POST" action="#" class="mt-3">
+                    <form method="POST" action="{{ route('Home.contact.store') }}" class="mt-3">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">Your Name</label>
-                            <input type="text" class="form-control shadow-sm" placeholder="Enter your name" required>
+                            <input type="text" name="name" class="form-control shadow-sm" placeholder="Enter your name" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Your Email</label>
-                            <input type="email" class="form-control shadow-sm" placeholder="Enter your email" required>
+                            <input type="email" name="email" class="form-control shadow-sm" placeholder="Enter your email" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Your Message</label>
-                            <textarea class="form-control shadow-sm" rows="3" placeholder="Type your message here..." required></textarea>
+                            <textarea name="message" class="form-control shadow-sm" rows="3" placeholder="Type your message here..." required></textarea>
                         </div>
                         <div class="d-flex justify-content-between">
                             <button type="reset" class="btn btn-outline-danger">Cancel</button>
                             <button type="submit" class="btn text-white px-4" style="background-color: #4bc5f3;">Send Message</button>
                         </div>
                     </form>
+
                 </div>
 
             </div>

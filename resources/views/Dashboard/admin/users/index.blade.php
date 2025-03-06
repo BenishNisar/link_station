@@ -1,13 +1,12 @@
-
 @extends("Layout.layouttwo")
 <style>
     .profile-image {
-    width: 60px; /* Adjust as needed */
-    height: 60px; /* Adjust as needed */
-    object-fit: cover; /* Ensures the image is properly cropped */
-    border-radius: 50%; /* Makes it circular */
-    border: 2px solid #ddd; /* Optional: Adds a border */
-    padding: 2px; /* Optional: Adds spacing */
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    padding: 2px;
 }
 
 </style>
@@ -125,50 +124,47 @@
                                     <th>Actions</th> <!-- Add actions column -->
                                 </tr>
                             </thead>
-                             <tbody>
-                                @foreach($users as $item)
 
+
+
+                            <tbody>
+                                @foreach($users as $index => $item)
                                     <tr>
-                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $index + 1 }}</td> <!-- Sequential numbers instead of ID -->
                                         <td>{{ $item->firstname }}</td>
                                         <td>{{ $item->lastname }}</td>
                                         <td>{{ $item->email }}</td>
-                                        <td>{{ $item->password }}</td>
+                                        <td>******</td> <!-- Hide password -->
                                         <td>{{ $item->gender }}</td>
                                         <td>{{ $item->country }}</td>
                                         <td>{{ $item->city }}</td>
                                         <td>
                                             @if($item->profile_img)
-
-                                            <img src="{{ asset($item->profile_img) }}" width="50px" height="50px" alt="Profile Image">
+                                                <img src="{{ asset($item->profile_img) }}" width="50px" height="50px" alt="Profile Image">
                                             @else
                                                 No Image
                                             @endif
                                         </td>
                                         <td>{{ $item->zip_code }}</td>
-
-                                        <td>{{ $item->role_id }}</td>
+                                        <td>{{ $item->role_name }}</td>
                                         <td>{{ $item->organization }}</td>
-
                                         <td class="actions">
-
-
-
-
-                                                 {{-- <a href="{{ route('dashboard.admin.users.show', $item->id) }}"><i class="fas fa-eye" title="View"></i></a> --}}
-                                                 <a href="{{ route('Dashboard.admin.users.edit', $item->id) }}"><i class="fas fa-edit" title="Edit"></i></a>
-                                                 <form action="{{ route('Dashboard.admin.users.delete', $item->id) }}" method="POST" style="display: inline;">
-                                                     @csrf
-                                                     @method('DELETE')
-                                                     <button type="submit" style="border: none; background: none; padding: 0;">
-                                                         <i class="fas fa-trash-alt" title="Delete"></i>
-                                                     </button>
-                                                 </form>
+                                            <a href="{{ route('Dashboard.admin.users.edit', $item->id) }}">
+                                                <i class="fas fa-edit" title="Edit"></i>
+                                            </a>
+                                            <form action="{{ route('Dashboard.admin.users.delete', $item->id) }}" method="POST" style="display: inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" style="border: none; background: none; padding: 0;">
+                                                    <i class="fas fa-trash-alt" title="Delete"></i>
+                                                </button>
                                             </form>
                                         </td>
                                     </tr>
-                                 @endforeach
+                                @endforeach
                             </tbody>
+
+
                         </table>
                     </div>
                 </div>

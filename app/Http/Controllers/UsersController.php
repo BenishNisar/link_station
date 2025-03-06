@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Role;
 use App\Models\User;
 
 use Illuminate\Http\Request;
@@ -10,19 +11,22 @@ class UsersController extends Controller
 {
     public function index()
     {
-        $users = User::all(); // Fetch all users from the database
+        $users = User::join('role', 'users.role_id', '=', 'role.id')
+                     ->select('users.*', 'role.role_name')
+                     ->get();
+
         return view('dashboard.admin.users.index', compact('users'));
     }
 
+
     public function add()
     {
-        return view("Dashboard.admin.users.add");
+    $roles = Role::all();
+  return view("Dashboard.admin.users.add",compact('roles'));
     }
 
     public function store(Request $request)
     {
-        // Debugging - Check if data is being received
-        // dd($request->all());
 
         $validatedData = $request->validate([
             'firstname' => 'required|string|max:255',
@@ -68,8 +72,10 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view("Dashboard.admin.users.edit", compact('user'));
+        $roles = Role::all(); // Fetch all roles
+        return view("Dashboard.admin.users.edit", compact('user', 'roles'));
     }
+
 
     public function update(Request $request, $id)
     {

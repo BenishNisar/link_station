@@ -1,4 +1,3 @@
-
 @extends("Layout.layout")
 @section("Content")
 
@@ -7,8 +6,13 @@
         <!-- Image Section -->
         <div class="col-md-6 position-relative">
             <div class="glassmorphism-card p-4 shadow-lg rounded-4">
-                <img src="{{ asset('assets/img/customer.jpeg') }}" alt="Web Development"
-                    class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto; border-radius: 20px;">
+                @if(isset($customerData) && $customerData->img)
+                    <img src="{{ asset($customerData->img) }}" alt="Customer Service"
+                        class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto; border-radius: 20px;">
+                @else
+                    <img src="{{ asset('assets/img/default-placeholder.jpg') }}" alt="Default Image"
+                        class="img-fluid rounded-4 shadow-lg" style="max-width: 100%; height: auto; border-radius: 20px;">
+                @endif
 
                 <!-- Decorative Gradient Shape -->
                 <div class="position-absolute top-50 start-50 translate-middle bg-gradient-primary rounded-circle"
@@ -18,11 +22,19 @@
 
         <!-- Text Section -->
         <div class="col-md-6">
-            <h2 class="fw-bold mb-3" style="font-size: 36px;color:#4dc6f4;">🚀 Customer</h2>
-            <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
-                Interacting with customers Handling customer queries and complaints Gathering customer feedback.
-            </p>
+            <h2 class="fw-bold mb-3" style="font-size: 36px;color:#4dc6f4;">🚀{{ $customerData->title }}
+            </h2>
 
+            @if(isset($customerData))
+
+                <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
+                    {{ $customerData->descripation }}
+                </p>
+            @else
+                <p class="text-muted" style="font-size: 18px; line-height: 1.8;">
+                    No customer service content available. Please update it from the admin panel.
+                </p>
+            @endif
 
             <!-- CTA Buttons -->
             <div class="d-flex align-items-center mt-4">
@@ -40,7 +52,5 @@
         </div>
     </div>
 </div>
-
-
 
 @endsection

@@ -139,7 +139,8 @@
 {{-- services --}}
 <div class="container-fluid my-5 service-container mt-0">
     <div class="container">
-        <h1 class="text-center text-white mb-4">Our Services</h1>
+        <h2 class="fw-bold text-center">Our Services</h2>
+
         <div class="row g-4">
             <!-- Web Development -->
             <div class="col-md-4">
@@ -200,7 +201,7 @@
                 <div class="service-card">
                     <h5>Customer Liaison</h5>
                     <img src="{{ asset('assets/img/customer.jpeg') }}" alt="Customer Liaison">
-                    <a href="{{ asset('/customer') }}" class="btn btn-custom">Read more</a>
+                    <a href="{{ asset('/customerfront') }}" class="btn btn-custom">Read more</a>
                 </div>
             </div>
 

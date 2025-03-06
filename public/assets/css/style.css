@@ -295,12 +295,12 @@ button:hover ~ .custom-cursor {
 /* service */
 .service-container {
     padding: 60px 0;
-    background: linear-gradient(135deg, #00aeee, #fff);
+    /* background: linear-gradient(135deg, #00aeee, #fff); */
 
 }
 
 .service-card {
-    background: linear-gradient(135deg, #004851, #00796B);
+    background: linear-gradient(135deg,  #00aeee, #ffff);
     border-radius: 15px;
     padding: 25px;
     transition: all 0.4s ease-in-out;
@@ -658,8 +658,7 @@ h5 {
     transform: scale(1.1);
 }
 
-
-/* serviece */
+/* whatsapp */
 .service-card-two {
     display: flex;
     align-items: center;
@@ -695,6 +694,9 @@ h5 {
     font-weight: bold;
 }
 /* paeges */
+
+
+
 /* Glassmorphism Effect */
 .glassmorphism-card {
     background: rgba(255, 255, 255, 0.2);

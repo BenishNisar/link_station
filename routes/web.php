@@ -40,14 +40,16 @@ use Illuminate\Support\Facades\Route;
 Route::get("/",[WelcomeController::class,"index"])->name("Home.welcome");
 Route::get("/service",[ServiceController::class,"index"])->name("Home.service");
 Route::get("/about",[AboutController::class,"index"])->name("Home.about");
-Route::get("/contact",[ContactController::class,"index"])->name("Home.");
+Route::get('/contact', [ContactController::class, 'index'])->name('Home.contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('Home.contact.store');
+
 Route::get("/webdevelopment",[WebDevelopmentController::class,"index"])->name("Home.webdevelopment");
 Route::get("/appdevelopment",[AppDevelopmentController::class,"index"])->name("Home.appdevelopment");
 Route::get("/packaging",[PackagingController::class,"index"])->name("Home.packaging");
 Route::get("/digital",[DigitalController::class,"index"])->name("Home.packaging");
 Route::get("/seo",[SEOController::class,"index"])->name("Home.seo");
 Route::get("/traveldoc",[TravelDocController::class,"index"])->name("Home.traveldoc");
-Route::get("/customer",[CustomerController::class,"index"])->name("Home.customer");
+Route::get("/customerfront",[CustomerController::class,"index"])->name("Home.customerfront");
 
 Route::get("/dashboard",[DashboardController::class,"index"])->name("Dashboard.admin.dashboard");
 Route::get("/accountlogin", [AccountLoginController::class, "index"])->name("login");
@@ -85,6 +87,7 @@ Route::post("contactus/store", [ContactUsController::class, "store"])->name("Das
 Route::get("contactus/edit/{id}", [ContactUsController::class, "edit"])->name("Dashboard.admin.contactus.edit");
 Route::put("contactus/update/{id}", [ContactUsController::class, "update"])->name("Dashboard.admin.contactus.update");
 Route::delete("contactus/delete/{id}", [ContactUsController::class, "destroy"])->name("Dashboard.admin.contactus.delete");
+Route::get('contactus-messages', [ContactUsController::class, 'index'])->name('Dashboard.admin.contactus.messages');
 
 
 

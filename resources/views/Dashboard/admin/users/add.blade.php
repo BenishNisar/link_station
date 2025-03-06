@@ -152,17 +152,27 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4 mb-3">
+            {{-- <div class="col-md-4 mb-3">
                 <label for="role_id">Role</label>
 
                 <select name="role_id" class="form-control" required>
                     <option value="1">Select</option>
-                    {{-- @foreach($roles as $role) --}}
-                    {{-- <option value="{{ $role->id }}">{{ $role->role_name }}</option> --}}
-                    {{-- @endforeach --}}
+                 @foreach($roles as $role)
+                   <option value="{{ $role->id }}">{{ $role->role_name }}</option>
+                   @endforeach
+                </select>
+
+            </div> --}}
+            <div class="col-md-4 mb-3">
+                <label for="role_id">Role</label>
+                <select name="role_id" class="form-control" required>
+                    <option value="">Select Role</option>
+                    @foreach($roles as $role)
+                        <option value="{{ $role->id }}">{{ $role->role_name }}</option>
+                    @endforeach
                 </select>
                 @error('role_id')
-                    <small class="text-danger">{{ $message }}</small>
+                    <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
 

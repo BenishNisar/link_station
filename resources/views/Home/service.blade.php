@@ -92,7 +92,7 @@
                 <div class="service-card">
                     <h5>Customer Liaison</h5>
                     <img src="{{ asset('assets/img/customer.jpeg') }}" alt="Customer Liaison">
-                    <a href="{{ asset('/customer') }}" class="btn btn-custom">Read more</a>
+                    <a href="{{ asset('/customerfront') }}" class="btn btn-custom">Read more</a>
                 </div>
             </div>
 

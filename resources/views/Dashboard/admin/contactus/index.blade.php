@@ -135,7 +135,7 @@
 <form action="{{ route('Dashboard.admin.contactus.delete', $item->id) }}" method="POST" >
                             @csrf
                             @method('DELETE')
-                            <button type="submit" style="border: none; background: none; color: #86092b; cursor: pointer;padding: 0;">
+                            <button type="submit" style="baorder: none; background: none; color: #86092b; cursor: pointer;padding: 0;">
                                 <i class="fas fa-trash-alt" title="Delete"></i>
                             </button>
                         </form>

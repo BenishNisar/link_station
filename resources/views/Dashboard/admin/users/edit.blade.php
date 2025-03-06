@@ -84,15 +84,16 @@
             <div class="col-md-3 mb-3">
                 <label for="role_id">Role</label>
                 <select name="role_id" class="form-control" required>
-                    <option value="1">Select</option>
-
-{{--
+                    <option value="">Select Role</option>
+                    @foreach($roles as $role)
                         <option value="{{ $role->id }}" {{ $user->role_id == $role->id ? 'selected' : '' }}>
                             {{ $role->role_name }}
-                        </option> --}}
-
+                        </option>
+                    @endforeach
                 </select>
-                @error('role_id') <div class="text-danger">{{ $message }}</div> @enderror
+                @error('role_id')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="col-md-3 mb-3">
