@@ -17,7 +17,7 @@
             </div>
 
             <!-- Right Side: Image -->
-            <div class="col-lg-6 text-center">
+            <div class="col-lg-6 text-center mt-4">
                 <img src="{{ asset('assets/img/about.webp') }}" alt="Code Image"
                      class="img-fluid rounded-3 shadow-lg animate__animated animate__fadeInRight">
             </div>

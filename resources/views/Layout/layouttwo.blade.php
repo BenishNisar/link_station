@@ -74,9 +74,9 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
-            <img src="{{ asset('Dashboard_assets/img/link_station.webp') }}" style="width: 115px;" alt="Logo">
+            <img src="{{ asset('Dashboard_assets/img/link_station.webp') }}" style="width: 80px;" alt="Logo">
         </a>
-        <i style="font-size:22px;position: relative;left:-22px;" class="bi bi-list toggle-sidebar-btn"></i>
+        <i style="font-size:22px;" class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
     <nav class="header-nav ms-auto">

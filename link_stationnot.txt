@@ -1,0 +1,9 @@
+Link_Station
+email:admin@gmail.com
+password:1234
+
+
+boostrap
+version 5.3
+laravel version 9.x
+xampp version 3.3 0

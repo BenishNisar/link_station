@@ -44,7 +44,7 @@
 
 <!-- Hero Section -->
 <!-- Hero Section -->
-<div class="hero-section position-relative text-center d-flex align-items-center justify-content-center" style="background: linear-gradient(to right, #3a1c71, #33bdf1, #ffff);">
+<div class="hero-section position-relative text-center d-flex align-items-center justify-content-center" style="background: linear-gradient(to right, #ffff,#ffff,#33bdf1,);">
     <!-- Background Image -->
     <div class="hero-bg">
         <img src="{{ asset('assets/img/business.gif') }}" class="hero-image" alt="Background">
@@ -57,8 +57,8 @@
     </a>
 
     <!-- Content -->
-    <div class="container text-dark text-center">
-        <h1 class="animate-fade-in">Link Station</h1>
+    <div class="container text-dark text-center mt-2">
+        <h1 class="animate-fade-in mt-2">Link Station</h1>
         <p class="hero-subtitle">Track performance & insights in one place.</p>
 
         <!-- Cards Section -->
@@ -114,7 +114,7 @@
         deliver your brand’s message free of distortion or distraction. Our web development experts can help grow your
         brand through professional and fast websites.
     </p>
-    <a href="#" class="btn btn-custom">Read more</a>
+    <a href="{{ asset("/about") }}" class="btn btn-custom">Read more</a>
 
     <div class="tech-icons mt-3">
         <h3>Our Technologies</h3>
@@ -743,7 +743,7 @@
 
 {{-- contact_us --}}
 
-<div class="container-fluid" style="background: url('{{ asset('assets/img/contact_us.jpg') }}') no-repeat center center; background-size: cover; padding: 150px 20px; color: white; text-align: center; min-height: 485px; position: relative;">
+<div class="container-fluid" style="background: url('{{ asset('assets/img/back_banner.jpg') }}') no-repeat center center; background-size: cover; padding: 150px 20px; text-align: center; min-height: 485px; position: relative;">
     <div class="row  align-items-center hero-section-new">
         <div class="col-md-6">
             <div class="contact-content">
@@ -760,12 +760,13 @@
 
 
 <!-- Call Us Section -->
+<!-- Call Us Section -->
 <div class="container my-5">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" >
         <div class="col-md-8">
-            <div class="d-flex justify-content-between align-items-center p-4 border rounded">
-                <h5 class="mb-0 fw-bold">Would you like to start a project with us? Call Now.</h5>
-                <a href="tel:02132640403" class="btn btn-primary px-4 py-2">021 32640403</a>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start p-4 border rounded">
+                <h5 class="mb-3 mb-md-0 fw-bold">Would you like to start a project with us? Call Now.</h5>
+                <a href="tel:02132640403" class="btn px-4 py-2" style="background:#2464bf;color:white;">021 32640403</a>
             </div>
         </div>
     </div>

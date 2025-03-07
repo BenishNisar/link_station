@@ -1,4 +1,6 @@
 @extends("Layout.layouttwo")
+
+
 @section("AdminContent")
 
 <div class="container mt-4">
@@ -9,46 +11,46 @@
     </div>
 
     <!-- Row for KPI Cards -->
-    <div class="row mt-4">
-        <div class="col-md-3">
-            <div class="card text-white bg-primary">
+    <div class="row mt-4 g-3">
+        <div class="col-md-3 col-6">
+            <div class="card text-white bg-primary shadow-lg">
                 <div class="card-body">
-                    <h5 class="card-title">Total Users</h5>
-                    <p class="card-text"><i class="fas fa-users"></i>{{ $totalUsers }}</p>
+                    <h5 class="card-title">Users</h5>
+                    <p class="card-text"><i class="fas fa-users"></i> {{ $totalUsers }}</p>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <div class="card text-white bg-success">
+        <div class="col-md-3 col-6">
+            <div class="card text-white bg-success shadow-lg">
                 <div class="card-body">
                     <h5 class="card-title">Roles</h5>
-                    <p class="card-text"><i class="fas fa-shopping-cart"></i>  {{ $totalRoles }}</p>
+                    <p class="card-text"><i class="fas fa-user-tag"></i> {{ $totalRoles }}</p>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <div class="card text-white bg-warning">
+        <div class="col-md-3 col-6">
+            <div class="card text-white bg-warning shadow-lg">
                 <div class="card-body">
-                    <h5 class="card-title">Web_Development</h5>
-                    <p class="card-text"><i class="fas fa-dollar-sign"></i> {{ $webprojects }}</p>
+                    <h5 class="card-title">Web</h5>
+                    <p class="card-text"><i class="fas fa-code"></i> {{ $webprojects }}</p>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <div class="card text-white bg-danger">
+        <div class="col-md-3 col-6">
+            <div class="card text-white bg-danger shadow-lg">
                 <div class="card-body">
                     <h5 class="card-title">Travel</h5>
-                    <p class="card-text"><i class="fas fa-exclamation-circle"></i> {{ $travel }}</p>
+                    <p class="card-text"><i class="fas fa-plane"></i> {{ $travel }}</p>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Charts Row -->
-    <div class="row mt-4">
+    <div class="row mt-4 g-3">
         <div class="col-md-6">
             <canvas id="salesChart"></canvas>
         </div>
@@ -58,42 +60,61 @@
     </div>
 
     <!-- Recent Activities & To-Do List -->
-    <div class="row mt-4">
-        <div class="col-md-6">
-            <h5>Recent Activities</h5>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Order #1234 shipped</li>
-                <li class="list-group-item"><i class="fas fa-user-plus text-info"></i> New user registered</li>
-                <li class="list-group-item"><i class="fas fa-exclamation-triangle text-danger"></i> Server issue reported</li>
+    <div class="row mt-4 g-3">
+        <div class="col-md-12">
+            <h3>Office Details</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><strong>Location:</strong> <?php echo $officeDetails->location; ?></li>
+                <li><strong>Email:</strong> <a href="mailto:<?php echo $officeDetails->email; ?>"><?php echo $officeDetails->email; ?></a></li>
+                <li><strong>Contact:</strong> <a href="tel:<?php echo $officeDetails->contact; ?>"><?php echo $officeDetails->contact; ?></a></li>
             </ul>
         </div>
-        <div class="col-md-6">
-            <h5>To-Do List</h5>
-            <ul class="list-group">
-                <li class="list-group-item"><i class="fas fa-tasks"></i> Complete sales report</li>
-                <li class="list-group-item"><i class="fas fa-edit"></i> Update user permissions</li>
-                <li class="list-group-item"><i class="fas fa-bell"></i> Check latest notifications</li>
-            </ul>
-        </div>
+
+
     </div>
 </div>
 
 <!-- Charts Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+    // Total users count se max range determine karna
+    var totalUsers = {{ $totalUsers }}; // Backend se users count fetch ho raha
+
+    // Max range ko set karna based on users count (for better visibility)
+    var maxSalesValue = totalUsers + (totalUsers * 0.2); // 20% buffer
+    var maxUserGrowth = totalUsers + (totalUsers * 0.3); // Growth ke liye 30% buffer
+
+    // ✅ Sales Chart Fix
     var ctx1 = document.getElementById('salesChart').getContext('2d');
     var salesChart = new Chart(ctx1, {
         type: 'bar',
         data: {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
             datasets: [{
-                label: 'Sales',
-                data: [1200, 1900, 3000, 5000, 7000],
-                backgroundColor: ['blue', 'green', 'red', 'purple', 'orange']
+                label: 'Total Users',
+                data: [
+                    Math.round(totalUsers * 0.3),
+                    Math.round(totalUsers * 0.4),
+                    Math.round(totalUsers * 0.6),
+                    Math.round(totalUsers * 0.8),
+                    totalUsers
+                ],
+                backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545', '#6f42c1']
             }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // ✅ Prevent Chart from Hiding
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: maxSalesValue
+                }
+            }
         }
     });
 
+    // ✅ User Growth Chart Fix
     var ctx2 = document.getElementById('userGrowthChart').getContext('2d');
     var userGrowthChart = new Chart(ctx2, {
         type: 'line',
@@ -101,13 +122,33 @@
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
             datasets: [{
                 label: 'User Growth',
-                data: [500, 800, 1200, 1800, 2600],
-                borderColor: 'blue',
-                fill: false
+                data: [
+                    Math.round(totalUsers * 0.2),
+                    Math.round(totalUsers * 0.35),
+                    Math.round(totalUsers * 0.5),
+                    Math.round(totalUsers * 0.7),
+                    totalUsers
+                ],
+                borderColor: '#17a2b8',
+                backgroundColor: 'rgba(23,162,184,0.2)',
+                fill: true,
+                tension: 0.3
             }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // ✅ Fix Chart Disappearing Issue
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: maxUserGrowth
+                }
+            }
         }
     });
+
 </script>
+
 
 <!-- Dark Mode Toggle Script -->
 <script>
@@ -115,14 +156,17 @@
         document.body.classList.toggle("dark-mode");
     });
 </script>
+
 <style>
     .dark-mode {
         background-color: #222;
         color: white;
     }
     .card {
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         border-radius: 10px;
+    }
+    .shadow-lg {
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
     }
 </style>
 

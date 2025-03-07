@@ -17,8 +17,8 @@
 
             <!-- Right Side: Image -->
             <div class="col-lg-6 text-center">
-                <img src="{{ asset('assets/img/service.jpg') }}" alt="Code Image"
-                     class="img-fluid rounded-3 shadow-lg animate__animated animate__fadeInRight">
+                <img src="{{ asset('assets/img/service.jpg') }}" alt="Code Image" style="width:500px;height:500px;"
+                     class="img-fluid rounded-3 shadow-lg animate__animated animate__fadeInRight mt-1">
             </div>
 
         </div>

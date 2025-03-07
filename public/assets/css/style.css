@@ -31,6 +31,10 @@ body {
 .btn-success:hover {
     background-color: #1ebe57;
 }
+
+
+/* mobile */
+
 /* navbar */
 
 /* footer */
@@ -563,8 +567,8 @@ h5 {
     margin-bottom: 20px;
 }
 .btn-custom {
-    background: #00aeee;
-    color: black;
+    background:#2464bf;
+    color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -572,7 +576,8 @@ h5 {
     transition: 0.3s;
 }
 .btn-custom:hover {
-    background: #ff5a7c;
+    background: #33bdf1;
+    color:white;
 }
 .tech-icons h3 {
     font-size: 1.5rem;
@@ -758,7 +763,7 @@ h5 {
 }
 
 .contact-btn {
-    background-color: #FF7F11;
+    background-color: #2464bf;
     color: white;
     font-size: 1rem;
     padding: 12px 24px;
@@ -770,21 +775,21 @@ h5 {
 }
 
 .contact-btn:hover {
-    background-color: #E67000;
+    background-color: #33bdf1;
     transform: scale(1.05);
 }
 
 /* Contact Section Responsive Fix */
 @media (max-width: 768px) {
-    /* Ensure flex container stacks on mobile */
+
     .d-flex.shadow-lg {
-        gap: 10px; /* Adjusts the space between buttons */
+        gap: 10px;
 
         flex-direction: column;
         text-align: center;
     }
     .d-flex.justify-content-between .btn {
-        width: 48%; /* Reduce button width */
+        width: 48%; 
         text-align: center;
         padding: 8px 12px; /* Adjust padding for better spacing */
         font-size: 14px; /* Adjust font size */
